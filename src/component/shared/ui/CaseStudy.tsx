@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import Button from './Button';
 import SectionWrapper from './SectionWrapper';
 import { motion, useAnimation } from 'framer-motion';
-
+import Image from 'next/image';
 type ProjectCardProps = {
   title: string;
   description: string;
@@ -64,7 +64,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl 
 
         {/* Right Image */}
         <div className="md:block border-none w-full md:w-[700px] h-[700px] overflow-hidden rounded-tr-[40px] rounded-br-[40px]">
-          <img
+          <Image
             src={imageUrl}
             alt={title}
             className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"

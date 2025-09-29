@@ -29,7 +29,7 @@ const HomeModule: React.FC = () => {
       </AnimatePresence>
 
       <Hero />
-      {/* <Tags /> */}
+      <Tags />
       <AboutSection />
            <CaseStudySection />
       <WorkSection />
