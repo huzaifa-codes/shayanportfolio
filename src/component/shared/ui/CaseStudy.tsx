@@ -63,13 +63,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl 
         </div>
 
         {/* Right Image */}
-        <div className="md:block border-none w-full md:w-[700px] h-[700px] overflow-hidden rounded-tr-[40px] rounded-br-[40px]">
-          <Image
-            src={imageUrl}
-            alt={title}
-            className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-          />
-        </div>
+       <div className="relative md:block border-none w-full md:w-[700px] h-[700px] overflow-hidden rounded-tr-[40px] rounded-br-[40px]">
+  <Image
+    src={imageUrl}
+    alt={title}
+    fill
+    className="object-cover transform hover:scale-105 transition-transform duration-500"
+  />
+</div>
+
       </motion.div>
     </SectionWrapper>
   );
