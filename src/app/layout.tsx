@@ -2,10 +2,10 @@
 
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import ContextProvider from "@/context/useContext";
 import Header from "@/component/layout/Header";
 import Footer from "@/component/layout/Footer";
 import { ThemeProvider } from "@/component/shared/ui/Theme-provider";
+import ContextProvider from "@/context/useContext";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -18,21 +18,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-   <html lang="en" suppressHydrationWarning className={jakarta.variable}>
-  <body>
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="light"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <ContextProvider>
-        <Header />
-        {children}
-        <Footer />
-      </ContextProvider>
-    </ThemeProvider>
-  </body>
-</html>
+    <html lang="en" suppressHydrationWarning className={jakarta.variable}>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ContextProvider>
+            <Header />
+            {children}
+            <Footer />
+          </ContextProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
