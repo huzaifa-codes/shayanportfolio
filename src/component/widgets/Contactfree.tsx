@@ -1,49 +1,43 @@
 import Button from "../shared/ui/Button";
 import SectionWrapper from "../shared/ui/SectionWrapper";
+import {  FiDownload } from "react-icons/fi";
 
 export default function ContactConsultancySection() {
   return (
     <SectionWrapper>
       <section
-        className="bg-gradient-to-r from-yellow-50 via-white to-yellow-100
-                   rounded-[40px] lg:rounded-[20px] px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-20
-                   flex flex-col lg:flex-row items-center gap-12 font-jakarta "
+        className="bg-gray-50 rounded-[40px] lg:rounded-[20px] px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-20
+                   flex flex-col items-center text-center space-y-6 font-jakarta"
       >
-        {/* Left Content */}
-        <div className="flex-1 max-w-2xl text-center lg:text-left space-y-6 lg:space-y-5">
-          <h2 className=" !text-gray-900">
-            Let’s Contact Free  Consultancy!
-          </h2>
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl font-semibold !text-gray-900">
+          Let’s Contact Free Consultancy!
+        </h2>
 
-          <h3 className="!text-gray-600">
-            Want to Build a Scalable Design from Scratch?
-          </h3>
+        {/* Sub Text */}
+        <p className="text-gray-600 max-w-[900px] leading-relaxed">
+          Want to Build a Scalable Design from Scratch? Let’s connect for a free consultancy. 
+          I’ll guide you step by step on how to build a design from scratch that is scalable, user-friendly, and impactful.
+        </p>
 
-          <p className=" !text-gray-600 leading-relaxed">
-            Let’s connect for a free consultancy. I’ll guide you step by step on
-            how to build a design from scratch that is scalable, user-friendly,
-            and impactful.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-16 justify-center lg:justify-start">
-            {/* Primary Button */}
-            <Button className=" bg-yellow-300 px-8 py-4 sm:px-10 sm:py-4 ">
-              Book A Meeting
-            </Button>
-
-            {/* Secondary Button */}
-            <Button className=" px-8 py-4 bg-black text-white sm:px-10 sm:py-4 ">
-              Partner With Me
-            </Button>
-          </div>
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-6">
+          <Button className="bg-amber-50 px-8 py-4 sm:px-10 sm:py-4">
+            Book A Meeting
+          </Button>
+          <Button className="bg-black text-white px-8 py-4 sm:px-10 sm:py-4">
+            Partner With Me
+          </Button>
         </div>
 
-        {/* Right Content */}
-        <div className="flex-1 w-full max-w-[500px]">
-          <div className="bg-gradient-to-br from-yellow-200 via-white to-yellow-100 rounded-[32px] 
-                          h-[200px] sm:h-[250px] md:h-[320px] lg:h-[460px] w-full shadow-2xl
-                          transform hover:scale-105 transition-transform duration-500" />
-        </div>
+        {/* Download Resume */}
+        <a
+          href="/resume.pdf" // Update with your resume path
+          download
+          className="flex items-center gap-2 mt-6 text-gray-700 hover:text-black text-lg font-medium"
+        >
+          Download my resume <FiDownload className="text-xl" />
+        </a>
       </section>
     </SectionWrapper>
   );

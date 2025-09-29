@@ -24,7 +24,7 @@ const socialLinks = [
 export default function Footer() {
   return (
 <div className="py-20">
-    <footer className="bg-gradient-to-r  from-yellow-50 via-white to-yellow-100 rounded-[40px] lg:rounded-[20px] 
+    <footer className="bg-gray-50 rounded-[40px] lg:rounded-[20px] 
                         max-w-[1400px] w-full mx-auto px-8 sm:px-12 lg:px-20 py-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0">
       
       {/* Heading */}
