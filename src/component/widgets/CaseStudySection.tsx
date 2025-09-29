@@ -34,7 +34,7 @@ const CaseStudySection: React.FC = () => {
   return (
     <section className="case-study-theme relative py-32">
       <div className="px-4 space-y-20">
-        <h2 className="font-bold text-center font-jakarta text-[var(--foreground)]">
+        <h2 className="font-bold text-center text-[22px] md:text-[40px] font-jakarta text-[var(--foreground)]">
           Some of My Selected Projects
         </h2>
 

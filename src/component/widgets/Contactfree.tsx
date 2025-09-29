@@ -1,6 +1,6 @@
 import Button from "../shared/ui/Button";
 import SectionWrapper from "../shared/ui/SectionWrapper";
-import {  FiDownload } from "react-icons/fi";
+import { FiDownload } from "react-icons/fi";
 
 export default function ContactConsultancySection() {
   return (
@@ -10,33 +10,33 @@ export default function ContactConsultancySection() {
                    flex flex-col items-center text-center space-y-6 font-jakarta"
       >
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-semibold !text-gray-900">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold !text-gray-900">
           Let’s Contact Free Consultancy!
         </h2>
 
         {/* Sub Text */}
-        <p className="text-gray-600 max-w-[900px] leading-relaxed">
-          Want to Build a Scalable Design from Scratch? Let’s connect for a free consultancy. 
+        <p className="text-gray-600 max-w-[900px] text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
+          Want to Build a Scalable Design from Scratch? Let’s connect for a free consultancy.
           I’ll guide you step by step on how to build a design from scratch that is scalable, user-friendly, and impactful.
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-6">
-          <Button className="bg-amber-50 px-8 py-4 sm:px-10 sm:py-4">
+        <div className="flex  sm:flex-row gap-3 sm:gap-6 mt-6 w-full sm:w-auto justify-center">
+          <Button className="bg-amber-50 px-4  sm:px-8 py-4 text-[12px] sm:text-base w-full sm:w-auto">
             Book A Meeting
           </Button>
-          <Button className="bg-black text-white px-8 py-4 sm:px-10 sm:py-4">
+          <Button className="bg-black text-white px-4  sm:px-8 py-4 text-[12px]  sm:text-base w-full sm:w-auto">
             Partner With Me
           </Button>
         </div>
 
         {/* Download Resume */}
         <a
-          href="/resume.pdf" // Update with your resume path
+          href="/resume.pdf"
           download
-          className="flex items-center gap-2 mt-6 text-gray-700 hover:text-black text-lg font-medium"
+          className="flex items-center gap-2 mt-6 text-gray-700 hover:text-black text-sm sm:text-base font-medium"
         >
-          Download my resume <FiDownload className="text-xl" />
+          Download my resume <FiDownload className="text-lg sm:text-xl" />
         </a>
       </section>
     </SectionWrapper>
