@@ -1,4 +1,4 @@
-'use client";'
+'use client';
 import React from "react";
 import SectionWrapper from "../shared/ui/SectionWrapper";
 import { useConContext } from "@/context/useConContext";

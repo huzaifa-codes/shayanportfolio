@@ -9,14 +9,14 @@ import ContextProvider from "@/context/useContext";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-jakarta", // CSS variable
+  variable: "--font-jakarta",
 });
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning className={jakarta.variable}>
       <body>
@@ -26,6 +26,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          {/* ✅ Wrap ContextProvider */}
           <ContextProvider>
             <Header />
             {children}

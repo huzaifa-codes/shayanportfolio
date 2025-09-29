@@ -1,17 +1,12 @@
 'use client'
 import React, { useState } from 'react'
-import { ConContext, type ConContextType } from './ConContext'
+import { ConContext } from './ConContext'
 
 const ContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [Contect, setContect] = useState<boolean>(false)
-
-  const data: ConContextType = {
-    Contect,
-    setContect
-  }
+  const [Contect, setContect] = useState(false)
 
   return (
-    <ConContext.Provider value={data}>
+    <ConContext.Provider value={{ Contect, setContect }}>
       {children}
     </ConContext.Provider>
   )
