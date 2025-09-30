@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       <SectionWrapper>
-        <section className="relative py-14 md:py-28">
+        <section className="relative py-14 md:py-24">
           <div className="relative rounded-[32px]">
             <div className="relative z-10 grid md:grid-cols-2 gap-10 lg:gap-14 items-center font-jakarta">
 
@@ -28,10 +28,10 @@ const HeroSection: React.FC = () => {
                   Available For Projects
                 </span>
 
-                <h1 className="font-extrabold text-[28px] sm:text-[36px] md:text-[48px] lg:text-[55px] leading-tight tracking-tighter">
-                  Sr. UX Designer <br />
-                  Helping Founders & <br />
-                  Startups Build <br />
+                <h1 className="font-extrabold text-[28px] sm:text-[36px] md:text-[48px] lg:text-[57px] leading-tight tracking-tighter">
+                  Sr. UX Designer 
+                  Helping Founders & 
+                  Startups Build 
                   Products Users Love.
                 </h1>
 

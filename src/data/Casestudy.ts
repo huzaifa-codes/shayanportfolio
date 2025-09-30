@@ -1,25 +1,51 @@
-
 type CaseStudyType = {
   imageUrl: string;
   quote: string;
   author: string;
   role: string;
   title: string;
+  slug: string;   // 👈 new field
   description: string;
   buttonText: string;
-}
-  
+  overview: string;
+  challenges: string[];
+  solutions: string[];
+  results: string[];
+  technologies: string[];
+  gallery: string[];
+};
 
-
-export const caseStudies:CaseStudyType[] = [
+export const caseStudies: CaseStudyType[] = [
   {
     imageUrl: "https://cdn.pixabay.com/photo/2025/08/18/10/02/wedge-tailed-eagle-9781524_640.jpg",
     quote: "More bookings. Less hassle. The site does its job perfectly and looks great doing it.",
     author: "Samantha R.",
     role: "CEO",
     title: "Lustra",
+    slug: "lustra",
     description: "Fast, elegant, and conversion-focused, it’s built to boost bookings and build trust.",
     buttonText: "Read More",
+    overview: "Lustra is a premium booking platform that needed a sleek UX to increase conversions.",
+    challenges: [
+      "Complicated booking process frustrated users.",
+      "Mobile responsiveness was poor.",
+      "Outdated brand visuals didn’t reflect quality."
+    ],
+    solutions: [
+      "Redesigned booking flow with fewer steps.",
+      "Implemented mobile-first responsive layouts.",
+      "Introduced a modern, clean visual identity."
+    ],
+    results: [
+      "Booking completion rate improved by 55%.",
+      "Mobile traffic increased by 70%.",
+      "Brand trust strengthened significantly."
+    ],
+    technologies: ["React", "Next.js", "TailwindCSS"],
+    gallery: [
+      "https://cdn.pixabay.com/photo/2025/08/25/16/28/lake-9789635_640.jpg",
+      "https://cdn.pixabay.com/photo/2025/08/26/10/02/forest-9789721_640.jpg"
+    ]
   },
   {
     imageUrl: "https://cdn.pixabay.com/photo/2025/08/19/07/43/poppy-9783322_640.jpg",
@@ -27,8 +53,30 @@ export const caseStudies:CaseStudyType[] = [
     author: "James P.",
     role: "Product Manager",
     title: "Poppy Store",
+    slug: "poppy-store",
     description: "A smooth, aesthetic shopping experience designed for growth and usability.",
     buttonText: "See Project",
+    overview: "Poppy Store is an online fashion retailer that wanted a modern eCommerce experience.",
+    challenges: [
+      "Checkout process had high abandonment rate.",
+      "Slow product page loading.",
+      "Cluttered product navigation."
+    ],
+    solutions: [
+      "Streamlined checkout with fewer clicks.",
+      "Implemented image optimization for fast load.",
+      "Designed a clean mega-menu for navigation."
+    ],
+    results: [
+      "Conversions doubled within 3 months.",
+      "Page load speed improved by 45%.",
+      "User satisfaction increased with intuitive flow."
+    ],
+    technologies: ["React", "Redux", "Node.js", "Stripe"],
+    gallery: [
+      "https://cdn.pixabay.com/photo/2025/08/24/14/37/mountain-9789234_640.jpg",
+      "https://cdn.pixabay.com/photo/2025/08/23/09/00/sunset-9789543_640.jpg"
+    ]
   },
   {
     imageUrl: "https://cdn.pixabay.com/photo/2025/08/20/17/06/landscape-9785949_640.jpg",
@@ -36,8 +84,30 @@ export const caseStudies:CaseStudyType[] = [
     author: "Maria G.",
     role: "Founder",
     title: "Vista Landscapes",
+    slug: "vista-landscapes",
     description: "An immersive site that reflects the calm, organic feel of the outdoors.",
     buttonText: "Explore",
+    overview: "Vista Landscapes wanted a brand refresh with a strong digital presence.",
+    challenges: [
+      "Website felt outdated.",
+      "Difficult to showcase portfolio projects.",
+      "Users struggled to contact company."
+    ],
+    solutions: [
+      "Created immersive visuals with large imagery.",
+      "Introduced portfolio showcase with filters.",
+      "Added simplified contact forms."
+    ],
+    results: [
+      "Brand recognition improved online.",
+      "Leads grew by 30% in first quarter.",
+      "Customer engagement doubled."
+    ],
+    technologies: ["Next.js", "Tailwind", "Framer Motion"],
+    gallery: [
+      "https://cdn.pixabay.com/photo/2025/08/21/11/20/coffee-9787801_640.jpg",
+      "https://cdn.pixabay.com/photo/2025/08/22/08/14/cityscape-9788322_640.jpg"
+    ]
   },
   {
     imageUrl: "https://cdn.pixabay.com/photo/2025/08/19/15/33/whelk-9784208_640.jpg",
@@ -45,8 +115,30 @@ export const caseStudies:CaseStudyType[] = [
     author: "Elijah K.",
     role: "CTO",
     title: "Shell Technologies",
+    slug: "shell-technologies",
     description: "Designed for scale and clarity, this product site makes complexity look simple.",
     buttonText: "Discover More",
+    overview: "Shell Technologies builds enterprise SaaS tools and needed a premium web experience.",
+    challenges: [
+      "Complex navigation overwhelmed users.",
+      "Product explanations were unclear.",
+      "Poor scalability for content growth."
+    ],
+    solutions: [
+      "Redesigned navigation for clarity.",
+      "Added interactive product explainers.",
+      "Created modular layout for scale."
+    ],
+    results: [
+      "User retention increased by 35%.",
+      "Bounce rate decreased significantly.",
+      "Sales demos requests rose by 40%."
+    ],
+    technologies: ["React", "TypeScript", "Next.js"],
+    gallery: [
+      "https://cdn.pixabay.com/photo/2025/08/25/16/28/lake-9789635_640.jpg",
+      "https://cdn.pixabay.com/photo/2025/08/26/10/02/forest-9789721_640.jpg"
+    ]
   },
   {
     imageUrl: "https://cdn.pixabay.com/photo/2025/08/21/11/20/coffee-9787801_640.jpg",
@@ -54,52 +146,184 @@ export const caseStudies:CaseStudyType[] = [
     author: "Nina T.",
     role: "Marketing Lead",
     title: "BrewLab Coffee",
+    slug: "brewlab-coffee",
     description: "A cozy, inviting platform that brews up great customer engagement.",
     buttonText: "Learn More",
+    overview: "BrewLab Coffee needed a warm and engaging online shop for specialty coffee.",
+    challenges: [
+      "Site didn’t reflect cozy brand story.",
+      "Users struggled to find products.",
+      "Checkout wasn’t optimized."
+    ],
+    solutions: [
+      "Designed cozy, earthy UI with illustrations.",
+      "Simplified product categories.",
+      "Integrated one-click checkout."
+    ],
+    results: [
+      "Customer loyalty improved.",
+      "Monthly sales up by 25%.",
+      "Brand story resonated with new users."
+    ],
+    technologies: ["Next.js", "TailwindCSS", "Stripe"],
+    gallery: [
+      "https://cdn.pixabay.com/photo/2025/08/18/10/02/wedge-tailed-eagle-9781524_640.jpg",
+      "https://cdn.pixabay.com/photo/2025/08/20/17/06/landscape-9785949_640.jpg"
+    ]
   },
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/22/08/14/cityscape-9788322_640.jpg",
-    quote: "Complex data visualizations, simplified elegantly for our users.",
-    author: "Tom H.",
-    role: "Data Analyst",
-    title: "Urban Metrics",
-    description: "Transforming raw city data into actionable insights with sleek design.",
-    buttonText: "Check It Out",
+    imageUrl: "https://cdn.pixabay.com/photo/2025/08/28/12/22/library-9790421_640.jpg",
+    quote: "Our students finally love using the portal. It's simple and engaging.",
+    author: "David L.",
+    role: "Education Director",
+    title: "EduSphere",
+    slug: "edusphere",
+    description: "An intuitive student portal designed for accessibility and engagement.",
+    buttonText: "View Case",
+    overview: "EduSphere is a digital education portal that needed an engaging, accessible UX for students of all ages.",
+    challenges: [
+      "Portal felt outdated and hard to navigate.",
+      "Accessibility for visually impaired students was lacking.",
+      "Engagement rates were dropping."
+    ],
+    solutions: [
+      "Redesigned UI with modern, clean design.",
+      "Added accessibility features like screen reader support.",
+      "Introduced gamified progress tracking."
+    ],
+    results: [
+      "Daily logins increased by 65%.",
+      "Accessibility compliance improved to WCAG 2.1 AA.",
+      "Student engagement doubled."
+    ],
+    technologies: ["React", "Next.js", "TailwindCSS", "Firebase"],
+    gallery: [
+      "https://cdn.pixabay.com/photo/2025/08/29/10/44/students-9791432_640.jpg",
+      "https://cdn.pixabay.com/photo/2025/08/30/14/28/campus-9791933_640.jpg"
+    ]
   },
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/23/09/00/sunset-9789543_640.jpg",
-    quote: "Beautifully designed, responsive, and completely on-brand.",
-    author: "Laura M.",
-    role: "Creative Director",
-    title: "Sunset Events",
-    description: "A dynamic event site with fluid navigation and stunning visuals.",
-    buttonText: "View Details",
+    imageUrl: "https://cdn.pixabay.com/photo/2025/08/27/15/10/restaurant-9790123_640.jpg",
+    quote: "Customers love the new design. Reservations have never been easier.",
+    author: "Olivia F.",
+    role: "Restaurant Owner",
+    title: "DineEasy",
+    slug: "dineeasy",
+    description: "A modern restaurant booking experience with warm, welcoming design.",
+    buttonText: "See Case Study",
+    overview: "DineEasy needed a clean and responsive restaurant booking system with a strong focus on mobile UX.",
+    challenges: [
+      "Old booking system was slow and confusing.",
+      "Mobile users had trouble reserving tables.",
+      "Brand identity wasn’t reflected online."
+    ],
+    solutions: [
+      "Built streamlined booking process with calendar view.",
+      "Mobile-first responsive design.",
+      "Introduced elegant food photography and visuals."
+    ],
+    results: [
+      "Bookings increased by 50%.",
+      "Mobile conversion rate improved by 80%.",
+      "Brand identity felt consistent and premium."
+    ],
+    technologies: ["React", "TailwindCSS", "Node.js"],
+    gallery: [
+      "https://cdn.pixabay.com/photo/2025/08/28/19/22/dining-9790721_640.jpg",
+      "https://cdn.pixabay.com/photo/2025/08/29/21/30/chef-9791522_640.jpg"
+    ]
   },
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/24/14/37/mountain-9789234_640.jpg",
-    quote: "Seamless user flow that made onboarding a breeze for new customers.",
-    author: "David S.",
-    role: "Product Owner",
-    title: "Summit Gear",
-    description: "Gear up with a site that focuses on clarity, speed, and trust.",
-    buttonText: "Explore Now",
+    imageUrl: "https://cdn.pixabay.com/photo/2025/08/26/18/09/healthcare-9789923_640.jpg",
+    quote: "The app feels trustworthy and professional, which is vital in healthcare.",
+    author: "Dr. Anwar H.",
+    role: "Medical Director",
+    title: "MediConnect",
+    slug: "mediconnect",
+    description: "A secure and user-friendly healthcare platform connecting patients and doctors.",
+    buttonText: "Read Full Story",
+    overview: "MediConnect wanted a reliable platform for patients to book appointments and manage health records easily.",
+    challenges: [
+      "Complicated medical jargon confused users.",
+      "Appointment booking was unreliable.",
+      "User trust was low due to poor UI."
+    ],
+    solutions: [
+      "Simplified language and clear icons.",
+      "Built a robust appointment system with reminders.",
+      "Used professional, clean healthcare UI design."
+    ],
+    results: [
+      "Patient bookings grew by 70%.",
+      "Trust levels improved based on user surveys.",
+      "Healthcare professionals found platform easier to use."
+    ],
+    technologies: ["Next.js", "MongoDB", "TailwindCSS"],
+    gallery: [
+      "https://cdn.pixabay.com/photo/2025/08/27/08/55/doctor-9790033_640.jpg",
+      "https://cdn.pixabay.com/photo/2025/08/27/09/30/hospital-9790035_640.jpg"
+    ]
   },
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/25/16/28/lake-9789635_640.jpg",
-    quote: "The perfect balance of minimalism and content richness.",
-    author: "Isabel W.",
-    role: "UX Designer",
-    title: "Lakeview Resorts",
-    description: "An immersive experience that captures tranquility through design.",
-    buttonText: "Discover",
+    imageUrl: "https://cdn.pixabay.com/photo/2025/08/23/09/00/travel-9789545_640.jpg",
+    quote: "Travel planning is now stress-free. The design makes it effortless.",
+    author: "Kevin S.",
+    role: "Founder",
+    title: "GlobeTrek",
+    slug: "globetrek",
+    description: "An inspiring travel booking platform designed with wanderlust in mind.",
+    buttonText: "Explore Project",
+    overview: "GlobeTrek needed a platform that would inspire users while making travel bookings easy and fun.",
+    challenges: [
+      "Cluttered UI overwhelmed users.",
+      "Booking flow wasn’t intuitive.",
+      "Site lacked emotional connection."
+    ],
+    solutions: [
+      "Redesigned with clean layouts and inspiring imagery.",
+      "Streamlined booking process with fewer clicks.",
+      "Integrated storytelling through visuals."
+    ],
+    results: [
+      "User satisfaction increased by 40%.",
+      "Bookings rose by 55% within 6 months.",
+      "Engagement with destination guides doubled."
+    ],
+    technologies: ["React", "Next.js", "Framer Motion"],
+    gallery: [
+      "https://cdn.pixabay.com/photo/2025/08/24/14/37/mountain-9789234_640.jpg",
+      "https://cdn.pixabay.com/photo/2025/08/25/12/19/beach-9789421_640.jpg"
+    ]
   },
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/26/10/02/forest-9789721_640.jpg",
-    quote: "Our users are delighted by how simple and intuitive the new site is.",
-    author: "Aaron V.",
-    role: "Head of Development",
-    title: "Green Trails",
-    description: "Bringing nature’s calm into a digital space with smooth UX.",
-    buttonText: "Read Case Study",
-  },
+    imageUrl: "https://cdn.pixabay.com/photo/2025/08/22/08/14/finance-9788323_640.jpg",
+    quote: "Investors finally feel at ease navigating our product. Confidence is at an all-time high.",
+    author: "Sophia W.",
+    role: "CFO",
+    title: "Finova",
+    slug: "finova",
+    description: "A modern financial dashboard designed for clarity, security, and trust.",
+    buttonText: "Case Study",
+    overview: "Finova needed a secure and elegant dashboard for users to track investments with ease.",
+    challenges: [
+      "Data was overwhelming to non-experts.",
+      "Dashboard felt outdated.",
+      "Security concerns eroded trust."
+    ],
+    solutions: [
+      "Created simple, interactive data visualizations.",
+      "Redesigned UI with modern financial branding.",
+      "Implemented clear trust signals and security cues."
+    ],
+    results: [
+      "User retention grew by 45%.",
+      "Customer trust improved significantly.",
+      "App store ratings improved from 3.2 to 4.6."
+    ],
+    technologies: ["React", "Next.js", "TypeScript", "TailwindCSS"],
+    gallery: [
+      "https://cdn.pixabay.com/photo/2025/08/23/19/55/chart-9789621_640.jpg",
+      "https://cdn.pixabay.com/photo/2025/08/24/12/40/money-9789734_640.jpg"
+    ]
+  }
 ];

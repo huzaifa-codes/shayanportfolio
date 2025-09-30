@@ -4,15 +4,25 @@ import Button from './Button';
 import SectionWrapper from './SectionWrapper';
 import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 type ProjectCardProps = {
   title: string;
   description: string;
   imageUrl: string;
   link?: string;
+  slug?: string;
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl , slug }) => {
+const router = useRouter()
+
+  function handlesingleroute(slug?:string) {
+    console.log(slug);
+    
+    router.push(`/casestudy/${slug}`);
+    
+  }
   const ref = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
   const [isVisible, setIsVisible] = useState(false);
@@ -51,7 +61,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl 
 
           {/* Button bottom aligned */}
           <div className="mt-6 md:mt-auto w-full">
-            <Button className="w-full md:w-auto px-4 sm:px-8 py-2 sm:py-3 text-sm sm:text-base bg-black text-white">
+            <Button onClick={()=> handlesingleroute(slug)} className="w-full md:w-auto px-4 sm:px-8 py-2 sm:py-3 text-sm sm:text-base bg-black text-white">
               View Project
             </Button>
           </div>
