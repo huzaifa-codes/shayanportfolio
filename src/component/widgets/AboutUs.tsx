@@ -85,7 +85,7 @@ const AboutSection: React.FC = () => {
             <div className="flex justify-start">
               <Button
                 onClick={() => setShowMore(!showMore)}
-                className="text-[18px] btn-default px-5 py-2 flex items-center gap-2"
+                className="text-[18px] btn-default hover:text-purple-400   px-5 py-2 flex items-center gap-2"
               >
                 {showMore ? "Show Less" : "Read More"}
 

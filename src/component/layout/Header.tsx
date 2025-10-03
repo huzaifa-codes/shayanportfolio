@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
-
+import Image from "next/image";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -16,10 +16,13 @@ export default function Header() {
   return (
     <header className="w-full top-0 bg-background/70 backdrop-blur-md">
       {/* Gradient glow background */}
-      <div className="absolute top-0 left-0 w-1/3 h-90 pointer-events-none -z-10">
-        <div className="absolute top-0 left-0 w-full h-full 
-                        bg-gradient-to-b from-yellow-400 to-transparent blur-[140px]"></div>
-      </div>
+<div className="absolute top-0 left-0 w-full h-90 pointer-events-none -z-10">
+  <div
+    className="absolute top-0 left-0 w-full h-full 
+               bg-gradient-to-b from-[#7264F3] to-transparent 
+               blur-[140px] opacity-60"
+  ></div>
+</div>
 
       <SectionWrapper>
         <div className="flex items-center justify-between py-6">
@@ -29,12 +32,14 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Link
-              href="/"
-              className="font-jakarta font-bold text-2xl sm:text-[33px] tracking-tight text-foreground hover:opacity-80 transition"
-            >
-              Shayandesigns
-            </Link>
+   
+         <Image 
+      src="/images/shayan-logo.svg" 
+      alt="Shayan Logo"
+      width={30}   
+      height={30}
+    />
+          
           </motion.div>
 
           {/* Nav (desktop only) */}

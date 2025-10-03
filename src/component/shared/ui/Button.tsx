@@ -13,6 +13,9 @@ export default function Button({
   
 }: ButtonProps) {
 
+
+
+
  
   const hasRoundedClass = /rounded(-\w+)?/.test(className);
 
@@ -22,9 +25,9 @@ export default function Button({
       className={[
         ' font-button font-jakarta',
         ' text-black',
-        'outline-1 outline-gray-300 transition-colors hover:bg-yellow-400 ',
+        '  transition-colors  hover:bg-yellow-400 ',
         '',
-        hasRoundedClass ? '' : 'rounded-xl', // add default if none passed
+        hasRoundedClass ? '' : 'rounded-full', // add default if none passed
         className,
       ]
         .filter(Boolean)

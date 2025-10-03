@@ -27,13 +27,13 @@ const tags: { icon: IconType; text: string }[] = [
 function TagItem({ icon: Icon, text }: { icon: IconType; text: string }) {
   return (
   <div
-  className="flex items-center gap-3 px-16 py-5  font-medium font-jakarta whitespace-nowrap
+  className="flex items-center gap-3 px-8 py-5  font-medium font-jakarta whitespace-nowrap
             hover:shadow-2xl transform hover:scale-105 transition-all duration-300
              cursor-default select-none
-             bg-gradient-to-r from-yellow-300 via-yellow-100 to-white/100 text-black rounded-[50px]"
+             bg-gradient-to-r text-black outline-1 rounded-[50px] outline-purple-300"
 >
-  <Icon className="text-2xl" />
-  <span>{text}</span>
+  <Icon className="text-2xl text-purple-600" />
+  <span className="font-jakarta">{text}</span>
 </div>
 
 
@@ -44,7 +44,7 @@ export default function TagsStrip() {
   const scrollingTags = [...tags, ...tags]; // Duplicate for seamless scroll
 
   return (
-    <section className="relative w-full overflow-hidden py-12">
+    <section className="relative w-full overflow-hidden py-18">
       {/* Side gradient fades */}
       <div className="pointer-events-none absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-20" />
       <div className="pointer-events-none absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-white to-transparent z-20" />

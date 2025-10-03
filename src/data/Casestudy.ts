@@ -17,7 +17,7 @@ type CaseStudyType = {
 
 export const caseStudies: CaseStudyType[] = [
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/18/10/02/wedge-tailed-eagle-9781524_640.jpg",
+    imageUrl: "/images/lustra.jpg",
     quote: "More bookings. Less hassle. The site does its job perfectly and looks great doing it.",
     author: "Samantha R.",
     role: "CEO",
@@ -42,13 +42,10 @@ export const caseStudies: CaseStudyType[] = [
       "Brand trust strengthened significantly."
     ],
     technologies: ["React", "Next.js", "TailwindCSS"],
-    gallery: [
-      "https://cdn.pixabay.com/photo/2025/08/25/16/28/lake-9789635_640.jpg",
-      "https://cdn.pixabay.com/photo/2025/08/26/10/02/forest-9789721_640.jpg"
-    ]
+    gallery: ["/images/lake.jpg", "/images/forest.jpg"],
   },
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/19/07/43/poppy-9783322_640.jpg",
+    imageUrl: "/images/poppy.jpg",
     quote: "We saw a 2x increase in conversions after launch. Seriously impressive work.",
     author: "James P.",
     role: "Product Manager",
@@ -73,13 +70,10 @@ export const caseStudies: CaseStudyType[] = [
       "User satisfaction increased with intuitive flow."
     ],
     technologies: ["React", "Redux", "Node.js", "Stripe"],
-    gallery: [
-      "https://cdn.pixabay.com/photo/2025/08/24/14/37/mountain-9789234_640.jpg",
-      "https://cdn.pixabay.com/photo/2025/08/23/09/00/sunset-9789543_640.jpg"
-    ]
+    gallery: ["/images/mountain.jpg", "/images/sunset.jpg"],
   },
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/20/17/06/landscape-9785949_640.jpg",
+    imageUrl: "/images/vista.jpg",
     quote: "The brand feels alive now. Everything aligns beautifully from UX to visuals.",
     author: "Maria G.",
     role: "Founder",
@@ -104,13 +98,10 @@ export const caseStudies: CaseStudyType[] = [
       "Customer engagement doubled."
     ],
     technologies: ["Next.js", "Tailwind", "Framer Motion"],
-    gallery: [
-      "https://cdn.pixabay.com/photo/2025/08/21/11/20/coffee-9787801_640.jpg",
-      "https://cdn.pixabay.com/photo/2025/08/22/08/14/cityscape-9788322_640.jpg"
-    ]
+    gallery: ["/images/coffee.jpg", "/images/cityscape.jpg"],
   },
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/19/15/33/whelk-9784208_640.jpg",
+    imageUrl: "/images/shell.jpg",
     quote: "Navigation is seamless. It finally feels like a premium digital product.",
     author: "Elijah K.",
     role: "CTO",
@@ -135,13 +126,10 @@ export const caseStudies: CaseStudyType[] = [
       "Sales demos requests rose by 40%."
     ],
     technologies: ["React", "TypeScript", "Next.js"],
-    gallery: [
-      "https://cdn.pixabay.com/photo/2025/08/25/16/28/lake-9789635_640.jpg",
-      "https://cdn.pixabay.com/photo/2025/08/26/10/02/forest-9789721_640.jpg"
-    ]
+    gallery: ["/images/lake.jpg", "/images/forest.jpg"],
   },
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/21/11/20/coffee-9787801_640.jpg",
+    imageUrl: "/images/brewlab.jpg",
     quote: "The site’s warmth and charm brought our brand story to life like never before.",
     author: "Nina T.",
     role: "Marketing Lead",
@@ -166,13 +154,10 @@ export const caseStudies: CaseStudyType[] = [
       "Brand story resonated with new users."
     ],
     technologies: ["Next.js", "TailwindCSS", "Stripe"],
-    gallery: [
-      "https://cdn.pixabay.com/photo/2025/08/18/10/02/wedge-tailed-eagle-9781524_640.jpg",
-      "https://cdn.pixabay.com/photo/2025/08/20/17/06/landscape-9785949_640.jpg"
-    ]
+    gallery: ["/images/eagle.jpg", "/images/landscape.jpg"],
   },
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/28/12/22/library-9790421_640.jpg",
+    imageUrl: "/images/edusphere.jpg",
     quote: "Our students finally love using the portal. It's simple and engaging.",
     author: "David L.",
     role: "Education Director",
@@ -197,13 +182,10 @@ export const caseStudies: CaseStudyType[] = [
       "Student engagement doubled."
     ],
     technologies: ["React", "Next.js", "TailwindCSS", "Firebase"],
-    gallery: [
-      "https://cdn.pixabay.com/photo/2025/08/29/10/44/students-9791432_640.jpg",
-      "https://cdn.pixabay.com/photo/2025/08/30/14/28/campus-9791933_640.jpg"
-    ]
+    gallery: ["/images/students.jpg", "/images/campus.jpg"],
   },
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/27/15/10/restaurant-9790123_640.jpg",
+    imageUrl: "/images/dineeasy.jpg",
     quote: "Customers love the new design. Reservations have never been easier.",
     author: "Olivia F.",
     role: "Restaurant Owner",
@@ -228,13 +210,10 @@ export const caseStudies: CaseStudyType[] = [
       "Brand identity felt consistent and premium."
     ],
     technologies: ["React", "TailwindCSS", "Node.js"],
-    gallery: [
-      "https://cdn.pixabay.com/photo/2025/08/28/19/22/dining-9790721_640.jpg",
-      "https://cdn.pixabay.com/photo/2025/08/29/21/30/chef-9791522_640.jpg"
-    ]
+    gallery: ["/images/dining.jpg", "/images/chef.jpg"],
   },
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/26/18/09/healthcare-9789923_640.jpg",
+    imageUrl: "/images/mediconnect.jpg",
     quote: "The app feels trustworthy and professional, which is vital in healthcare.",
     author: "Dr. Anwar H.",
     role: "Medical Director",
@@ -259,13 +238,10 @@ export const caseStudies: CaseStudyType[] = [
       "Healthcare professionals found platform easier to use."
     ],
     technologies: ["Next.js", "MongoDB", "TailwindCSS"],
-    gallery: [
-      "https://cdn.pixabay.com/photo/2025/08/27/08/55/doctor-9790033_640.jpg",
-      "https://cdn.pixabay.com/photo/2025/08/27/09/30/hospital-9790035_640.jpg"
-    ]
+    gallery: ["/images/doctor.jpg", "/images/hospital.jpg"],
   },
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/23/09/00/travel-9789545_640.jpg",
+    imageUrl: "/images/globetrek.jpg",
     quote: "Travel planning is now stress-free. The design makes it effortless.",
     author: "Kevin S.",
     role: "Founder",
@@ -290,13 +266,10 @@ export const caseStudies: CaseStudyType[] = [
       "Engagement with destination guides doubled."
     ],
     technologies: ["React", "Next.js", "Framer Motion"],
-    gallery: [
-      "https://cdn.pixabay.com/photo/2025/08/24/14/37/mountain-9789234_640.jpg",
-      "https://cdn.pixabay.com/photo/2025/08/25/12/19/beach-9789421_640.jpg"
-    ]
+    gallery: ["/images/mountain.jpg", "/images/beach.jpg"],
   },
   {
-    imageUrl: "https://cdn.pixabay.com/photo/2025/08/22/08/14/finance-9788323_640.jpg",
+    imageUrl: "/images/finova.jpg",
     quote: "Investors finally feel at ease navigating our product. Confidence is at an all-time high.",
     author: "Sophia W.",
     role: "CFO",
@@ -321,9 +294,6 @@ export const caseStudies: CaseStudyType[] = [
       "App store ratings improved from 3.2 to 4.6."
     ],
     technologies: ["React", "Next.js", "TypeScript", "TailwindCSS"],
-    gallery: [
-      "https://cdn.pixabay.com/photo/2025/08/23/19/55/chart-9789621_640.jpg",
-      "https://cdn.pixabay.com/photo/2025/08/24/12/40/money-9789734_640.jpg"
-    ]
-  }
+    gallery: ["/images/chart.jpg", "/images/money.jpg"],
+  },
 ];
