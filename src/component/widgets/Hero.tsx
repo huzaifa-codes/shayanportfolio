@@ -24,7 +24,7 @@ const HeroSection: React.FC = () => {
 
               <h1 className="font-bold text-3xl sm:text-4xl md:text-[53px]">
                 Sr. UX Designer{" "}
-                <span className="text-purple-400">Helping Founders & Startups</span>{" "}
+                <span className="text-purple-500">Helping Founders & Startups</span>{" "}
                 Build Products Users Love.
               </h1>
 
