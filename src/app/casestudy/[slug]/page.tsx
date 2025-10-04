@@ -20,13 +20,11 @@ type CaseStudy = {
 };
 
 interface CaseStudyPageProps {
-  // params may be a Promise in some Next.js setups, so accept both shapes
-  params: { slug: string } | Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>;
 }
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
-  const { slug } = await params; // <-- important: await params
-
+  const { slug } = await params;
   const caseStudy = (caseStudies as CaseStudy[]).find((s) => s.slug === slug);
 
   if (!caseStudy) {

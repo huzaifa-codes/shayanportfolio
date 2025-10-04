@@ -1,4 +1,3 @@
-"use client";
 
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
@@ -6,11 +5,21 @@ import Header from "@/component/layout/Header";
 import Footer from "@/component/layout/Footer";
 import { ThemeProvider } from "@/component/shared/ui/Theme-provider";
 import ContextProvider from "@/context/useContext";
+import type { Metadata } from 'next'
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-jakarta",
 });
+
+export const metadata: Metadata = {
+  title: 'shayandesigns',
+  description: 'This is me Shayan Designs',
+  icons: {
+    icon: '/images/shayan-logo.svg',  
+  },
+};
+
 
 export default function RootLayout({
   children,

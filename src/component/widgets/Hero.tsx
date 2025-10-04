@@ -4,7 +4,7 @@ import SectionWrapper from "../shared/ui/SectionWrapper";
 import { useConContext } from "@/context/useConContext";
 import Button from "../shared/ui/Button";
 import { SiFigma } from "react-icons/si";
-
+import Image from "next/image";
 const HeroSection: React.FC = () => {
   const { setContect } = useConContext();
 
@@ -13,7 +13,7 @@ const HeroSection: React.FC = () => {
 
 
       <SectionWrapper>
-        <section className="relative py-14">
+        <section className="relative py-3">
           <div className="relative rounded-[32px]">
             <div className="relative z-10 grid md:grid-cols-2 gap-10 lg:gap-14 items-center font-jakarta">
 
@@ -24,21 +24,21 @@ const HeroSection: React.FC = () => {
                   Available For Projects
                 </span>
 
-                <h1 className="font-bold text-[28px] sm:text-[36px] md:text-[48px] lg:text-[58px] leading-tight tracking-tighter">
+                <h1 className="font-bold text-[28px] sm:text-[36px] md:text-[48px] lg:text-[54px] leading-tight tracking-tighter">
                   Sr. UX Designer 
                   Helping Founders & 
                   Startups Build 
                   Products Users Love.
                 </h1>
 
-                <p className="text-[14px] text-gray-900 sm:text-[16px] md:text-[18px] leading-[22px] sm:leading-[28px]">
+                <p className="text-[14px]  sm:text-[16px] md:text-[18px] leading-[22px] sm:leading-[28px]">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem totam repellendus explicabo sunt, consequatur dignissimos mollitia.
                 </p>
 
                 {/* Buttons Inline */}
                 <div className="flex flex-wrap gap-3 sm:gap-5 mt-18">
                   <Button
-                    className="!px-3 sm:!px-6 !py-3 text-[10px] sm:text-[14px] md:text-lg  bg-[#7264F3] text-white"
+                    className="px-10     text-[10px] sm:text-[14px] md:text-lg  bg-[#7264F3] text-white"
                     onClick={() => setContect(true)}
                   >
                     Let’s Connect
@@ -51,12 +51,12 @@ const HeroSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Right Showcase Box */}
-              <div className="relative w-full h-[280px] sm:h-[320px] md:h-[360px] lg:h-[440px] rounded-[28px] flex items-center justify-center border border-gray-200 bg-gray-50 mt-10 md:mt-0">
-                <span className="text-gray-500 text-sm sm:text-lg">
-                  📐 Design Preview Coming Soon
-                </span>
-              </div>
+            <Image
+            src="\images\shayan-image.svg"
+            alt="Hero Image"
+            width={600}
+            height={500}
+            />
             </div>
           </div>
         </section>
