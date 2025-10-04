@@ -21,15 +21,14 @@ export default function ContactConsultancySection() {
         </p>
 
         {/* Buttons */}
-        <div className="flex  sm:flex-row gap-3 sm:gap-6 mt-6 w-full sm:w-auto justify-center">
-          <Button className="bg-amber-50 px-4  sm:px-8 py-4 text-[12px] sm:text-base w-full sm:w-auto">
-            Book A Meeting
-          </Button>
-          <Button className="bg-black text-white px-4  sm:px-8 py-4 text-[12px]  sm:text-base w-full sm:w-auto">
-            Partner With Me
-          </Button>
-        </div>
-
+       <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 mt-6 w-full sm:w-auto justify-center">
+  <Button variant="primary" className="w-full sm:w-auto">
+    Book A Meeting
+  </Button>
+  <Button variant="secondary" className="w-full sm:w-auto">
+    Partner With Me
+  </Button>
+</div>
         {/* Download Resume */}
         <a
           href="/resume.pdf"

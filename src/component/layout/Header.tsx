@@ -6,23 +6,26 @@ import SectionWrapper from "../shared/ui/SectionWrapper";
 import Button from "../shared/ui/Button";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 import Image from "next/image";
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
+  const navItems = ["Home", "Portfolio", "About", "Contact"];
+
   return (
-    <header className="w-full top-0 bg-background/70 backdrop-blur-md">
+    <header className="relative w-full bg-background/70 backdrop-blur-md">
       {/* Gradient glow background */}
-<div className="absolute top-0 left-0 w-full h-90 pointer-events-none -z-10">
-  <div
-    className="absolute top-0 left-0 w-full h-full 
-               bg-gradient-to-b from-[#7264F3] to-transparent 
-               blur-[140px] opacity-60"
-  ></div>
-</div>
+      <div className="absolute top-0 bg-center w-full h-96 pointer-events-none -z-10">
+        <div
+          className="absolute top-0 left-0 w-full h-full 
+                     bg-gradient-to-b from-[#7264F3] to-transparent 
+                     blur-[140px] opacity-30"
+        />
+      </div>
 
       <SectionWrapper>
         <div className="flex items-center justify-between py-6">
@@ -32,57 +35,47 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-   
-         <Image 
-      src="/images/shayan-logo.svg" 
-      alt="Shayan Logo"
-      width={30}   
-      height={30}
-    />
-          
+            <Link href="/">
+              <Image
+                src="/images/shayan-logo.svg"
+                alt="Shayan Logo"
+                width={40}
+                height={40}
+              />
+            </Link>
           </motion.div>
 
-          {/* Nav (desktop only) */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-10 font-jakarta text-[16px] lg:text-[17px] text-foreground">
-            {["Home", "Portfolio", "About", "Contact"].map((item, idx) => (
+            {navItems.map((item, idx) => (
               <motion.div
                 key={item}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <a
-                  href={`/#${item.toLowerCase()}`}
-                  className="relative group"
-                >
+                <a href={`/#${item.toLowerCase()}`} className="relative group">
                   {item}
-                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-primary transition-all group-hover:w-full"></span>
+                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-primary transition-all group-hover:w-full" />
                 </a>
               </motion.div>
             ))}
           </nav>
 
           {/* Desktop Buttons */}
-          <div className="hidden md:flex items-center gap-8">
-            <Button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="w-10 h-10 rounded-full flex items-center justify-center border-none hover:scale-110 transition cursor-pointer"
-            aria-label="Toggle Dark Mode"
-          >
-            {theme === "dark" ? (
-              <Moon className="w-5 h-5 text-white" />
-            ) : (
-              <Sun className="w-5 h-5 text-black" />
-            )}
-          </Button>
-            <Button
-              style={{
-                padding: "16px 32px",
-              }}
-              className="btn-primary"
+          <div className="hidden md:flex items-center gap-4 lg:gap-8">
+            <Button>Download Resume</Button>
+            {/* <Button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="w-10 h-10 p-0"
+              aria-label="Toggle Dark Mode"
             >
-              Download Resume
-            </Button>
+              {theme === "dark" ? (
+                <Moon className="w-5 h-5 text-white" />
+              ) : (
+                <Sun className="w-5 h-5 text-black" />
+              )}
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -101,47 +94,48 @@ export default function Header() {
       </SectionWrapper>
 
       {/* Mobile Menu */}
-      <motion.div
-        id="mobile-menu"
-        initial={{ height: 0, opacity: 0 }}
-        animate={{
-          height: isMenuOpen ? "auto" : 0,
-          opacity: isMenuOpen ? 1 : 0,
-        }}
-        transition={{ duration: 0.3 }}
-        className="md:hidden overflow-hidden w-full px-4"
-      >
-        <div className="flex flex-col space-y-4 font-jakarta text-[18px] py-4  rounded-lg">
-          {["Home", "Portfolio", "About", "Contact"].map((item) => (
-            <Link
-              key={item}
-              href={`/${item.toLowerCase()}`}
-              onClick={() => setIsMenuOpen(false)}
-              className="hover:text-primary transition"
-            >
-              {item}
-            </Link>
-          ))}
-
-          {/* Mobile Download Resume (Theme Aware) */}
-        <div className="flex justify-start gap-6 items-center mt-4">
-            <Button className="btn-primary  px-10 ">Download Resume</Button>
-
-          {/* Mobile Theme Toggle */}
-          <Button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition cursor-pointer"
-            aria-label="Toggle Dark Mode"
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            id="mobile-menu"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden overflow-hidden w-full px-4 bg-background/90 backdrop-blur-md rounded-b-lg"
           >
-            {theme === "dark" ? (
-              <Moon className="w-5 h-5 text-white" />
-            ) : (
-              <Sun className="w-5 h-5 text-black" />
-            )}
-          </Button>
-        </div>
-        </div>
-      </motion.div>
+            <div className="flex flex-col space-y-4 font-jakarta text-[18px] py-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item}
+                  href={`/#${item.toLowerCase()}`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="hover:text-primary transition"
+                >
+                  {item}
+                </Link>
+              ))}
+
+              <div className="flex justify-start gap-4 items-center mt-4">
+                <Button>Download Resume</Button>
+                {/* <Button
+                  onClick={() =>
+                    setTheme(theme === "dark" ? "light" : "dark")
+                  }
+                  className="w-10 h-10 p-0"
+                  aria-label="Toggle Dark Mode"
+                >
+                  {theme === "dark" ? (
+                    <Moon className="w-5 h-5 text-white" />
+                  ) : (
+                    <Sun className="w-5 h-5 text-black" />
+                  )}
+                </Button> */}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

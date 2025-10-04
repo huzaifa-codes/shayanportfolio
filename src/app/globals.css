@@ -5,7 +5,11 @@
   /* Base Colors */
   --background: #ffffff;
   --foreground: #020202;
-  --case-study-bg: linear-gradient(to bottom, #fef9c3, #ffffff, #fef9c3);
+   --case-study-bg: linear-gradient(
+    to bottom,
+    rgba(114, 100, 243, 0.3), /* top light purple */
+    rgba(114, 100, 243, 0.15) /* bottom very light */
+  );
   /* UI Colors */
   --card: #f9fafb;
   --card-foreground: #111111;
@@ -73,8 +77,12 @@
   color: var(--foreground);
 } 
 .case-study-theme {
-  background: var(--case-study-bg);
+  background: var(--case-study-bg); 
+
 }
+
+
+
 /* 🌐 Base Styles */
 body {
   @apply bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300;

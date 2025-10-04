@@ -27,13 +27,13 @@ const tags: { icon: IconType; text: string }[] = [
 function TagItem({ icon: Icon, text }: { icon: IconType; text: string }) {
   return (
   <div
-  className="flex items-center gap-3 px-8 py-5  font-medium font-jakarta whitespace-nowrap
-            hover:shadow-2xl transform hover:scale-105 transition-all duration-300
+  className="flex items-center gap-3 px-5 md:px-8 md:py-3 py-2 font-medium font-jakarta whitespace-nowrap
+            hover:transform hover:scale-105 transition-all duration-300
              cursor-default select-none
-             bg-gradient-to-r text-black outline-1 rounded-[50px] outline-purple-300"
+             bg-gradient-to-r text-black  outline-1 rounded-[50px] outline-purple-300"
 >
-  <Icon className="text-2xl text-purple-600" />
-  <span className="font-jakarta">{text}</span>
+  <Icon className=" text-purple-600" />
+  <span className="font-jakarta text-[16px]">{text}</span>
 </div>
 
 
@@ -41,7 +41,7 @@ function TagItem({ icon: Icon, text }: { icon: IconType; text: string }) {
 }
 
 export default function TagsStrip() {
-  const scrollingTags = [...tags, ...tags]; // Duplicate for seamless scroll
+  const scrollingTags = [...tags, ...tags]; 
 
   return (
     <section className="relative w-full overflow-hidden py-18">
@@ -51,7 +51,7 @@ export default function TagsStrip() {
 
       {/* Top row → Left to Right */}
       <motion.div
-        className="flex gap-6 mb-6"
+        className="flex gap-2 mb-6 md:gap-5"
         initial={{ x: 0 }}
         animate={{ x: "-50%" }}
         transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
@@ -63,7 +63,7 @@ export default function TagsStrip() {
 
       {/* Bottom row → Right to Left */}
       <motion.div
-        className="flex gap-6"
+        className="flex gap-2 md:gap-5"
         initial={{ x: "-50%" }}
         animate={{ x: 0 }}
         transition={{ repeat: Infinity, duration: 35, ease: "linear" }}

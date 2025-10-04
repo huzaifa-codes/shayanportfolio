@@ -15,7 +15,12 @@ function viewAllroute() {
 const caseStudy = caseStudies.slice(0, 3); // Display only the first three projects
 
   return (
-    <section className="case-study-theme relative py-32">
+    <section className="relative py-32 w-full h-full">
+        <div
+    className="absolute top-0 left-0 w-full h-full 
+               bg-gradient-to-b from-[#7264F3] to-transparent 
+               blur-[140px] opacity-30"
+  ></div>
       <div className="px-4 space-y-20">
         <h2 className="font-bold text-center text-[22px] md:text-[40px] font-jakarta text-[var(--foreground)]">
           Some of My Selected Projects
@@ -27,9 +32,11 @@ const caseStudy = caseStudies.slice(0, 3); // Display only the first three proje
           ))}
         </div>
 
-        <div className="flex justify-center">
-          <Button className="btn-primary px-14 py-4" onClick={(viewAllroute)}>View All</Button>
-        </div>
+       <div className="flex justify-center">
+  <Button variant="secondary" onClick={viewAllroute}>
+    View All
+  </Button>
+</div>
       </div>
     </section>
   );

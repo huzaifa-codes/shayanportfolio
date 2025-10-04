@@ -50,7 +50,7 @@ const router = useRouter()
       <motion.div
         ref={ref}
         animate={controls}
-        className="rounded-[40px] flex flex-col md:flex-row justify-between items-start max-w-[1400px] h-auto md:h-[700px] mx-auto overflow-hidden bg-white duration-500"
+        className="rounded-[40px]  flex flex-col md:flex-row justify-between items-start max-w-[1400px] h-auto md:h-[700px] mx-auto overflow-hidden bg-white duration-500"
       >
         {/* Left Content */}
         <div className="flex flex-col justify-between h-full w-full md:max-w-[630px] py-10 px-6 sm:py-16 sm:px-10 md:p-20 font-jakarta">
@@ -61,9 +61,9 @@ const router = useRouter()
 
           {/* Button bottom aligned */}
           <div className="mt-6 md:mt-auto w-full">
-            <Button onClick={()=> handlesingleroute(slug)} className="w-full md:w-auto px-4 sm:px-8 py-2 sm:py-3 text-sm sm:text-base bg-black text-white">
-              View Project
-            </Button>
+          <Button variant="secondary" onClick={() => handlesingleroute(slug)}>
+  View Project
+</Button>
           </div>
         </div>
 
