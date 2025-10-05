@@ -27,10 +27,10 @@ const tags: { icon: IconType; text: string }[] = [
 function TagItem({ icon: Icon, text }: { icon: IconType; text: string }) {
   return (
   <div
-  className="flex items-center gap-3 px-5 md:px-8 md:py-3 py-2 font-medium font-jakarta whitespace-nowrap
+  className="flex items-center gap-3 px-5  md:px-8 md:py-3 py-2 font-medium font-jakarta whitespace-nowrap
             hover:transform hover:scale-105 transition-all duration-300
              cursor-default select-none
-             bg-gradient-to-r text-black  outline-1 rounded-[50px] outline-purple-300"
+             bg-gradient-to-r text-black  outline-1 rounded-full outline-purple-100"
 >
   <Icon className=" text-purple-600" />
   <span className="font-jakarta text-[16px]">{text}</span>

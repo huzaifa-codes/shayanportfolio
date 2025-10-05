@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // import { Sun, Moon } from "lucide-react";
 import Image from "next/image";
 
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // const { theme, setTheme } = useTheme();
@@ -56,7 +57,7 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <a href={`/#${item.toLowerCase()}`} className="relative group">
+                <a href={item == 'Home' ? '/' : `/#${item.toLowerCase()}`} className="relative group">
                   {item}
                   <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-primary transition-all group-hover:w-full" />
                 </a>
@@ -82,15 +83,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle Menu"
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-              className="focus:outline-none text-foreground"
-            >
-              {isMenuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
-            </button>
+           <Button>Book a Call</Button>
           </div>
         </div>
       </SectionWrapper>

@@ -9,6 +9,7 @@ import {
   SiGoogle,
   SiReddit,
 } from "react-icons/si";
+import SectionWrapper from "../shared/ui/SectionWrapper";
 
 const socialLinks = [
   { Icon: SiBehance, label: "Behance", href: "#", colorClass: "text-blue-600" },
@@ -23,7 +24,8 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-<div className="py-20">
+<SectionWrapper>
+  <div className="py-20">
     <footer className="bg-gray-50 rounded-[40px] lg:rounded-[20px] 
                         max-w-[1400px] w-full mx-auto px-8 sm:px-12 lg:px-20 py-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0">
       
@@ -49,5 +51,6 @@ export default function Footer() {
       </div>
     </footer>
 </div>
+</SectionWrapper>
   );
 }

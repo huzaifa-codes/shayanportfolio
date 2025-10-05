@@ -100,10 +100,6 @@ export default function WorkSection() {
             ))}
           </motion.div>
         </div>
-
-        <div className="flex justify-center">
-         <Button variant="secondary">View All</Button>
-        </div>
       </div>
     </section>
   );

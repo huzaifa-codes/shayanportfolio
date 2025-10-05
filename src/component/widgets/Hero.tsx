@@ -22,13 +22,13 @@ const HeroSection: React.FC = () => {
                 Available For Projects
               </span>
 
-              <h1 className="font-bold text-3xl sm:text-4xl md:text-[53px]">
+              <h1 className="font-bold text-3xl sm:text-4xl md:text-[48px]">
                 Sr. UX Designer{" "}
                 <span className="text-purple-500">Helping Founders & Startups</span>{" "}
                 Build Products Users Love.
               </h1>
 
-             <p className="text-base sm:text-lg text-gray-600">
+             <p className=" text-gray-700">
   We craft digital experiences that blend creativity with technology — helping brands stand out, connect with their audience, and leave a lasting impact.
 </p>
 
