@@ -90,7 +90,7 @@ export default function WorkSection() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-fit h-[400px]"
+                    className="w-fit h-[300px] md:h-[400px]"
                   />
                 )}
                 <p className="mt-3 text-gray-700 font-medium text-sm sm:text-base">

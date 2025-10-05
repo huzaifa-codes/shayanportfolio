@@ -18,7 +18,7 @@ const AboutSection: React.FC = () => {
           </h2>
 
           {/* Content */}
-          <div className="space-y-6 max-w-[750px] font-jakarta text-left text-gray-700">
+          <div className="space-y-6 max-w-[750px] font-jakarta text-left">
             <p className="text-base md:text-xl leading-relaxed">
               I’m Shayan , a UX designer who loves transforming ideas into simple, meaningful, and user-friendly experiences.
             </p>
@@ -26,13 +26,15 @@ const AboutSection: React.FC = () => {
             <p className="text-base md:text-lg leading-relaxed">
               My goal is to design with empathy — ensuring every interaction feels intuitive, enjoyable, and unforgettable.
             </p>
-
+<p className="text-base md:text-lg leading-relaxed">
+   I’m working as a UI/UX Designer at Huda Soft
+</p>
             {/* Extra Content */}
             {showMore && (
               <div className="space-y-8">
                 {/* Education */}
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-amber-500 font-semibold text-sm">
+                  <div className="flex items-center gap-2 text-purple-500 font-semibold text-lg">
                     <FiBookOpen size={18} /> Educational Qualifications
                   </div>
                   <div>
@@ -47,7 +49,7 @@ const AboutSection: React.FC = () => {
 
                 {/* Experience */}
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-amber-500 font-semibold text-sm">
+                  <div className="flex items-center gap-2 text-purple-500 font-semibold text-lg">
                     <FiBriefcase size={18} /> Experience
                   </div>
                   <div>

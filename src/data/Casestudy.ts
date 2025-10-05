@@ -13,6 +13,7 @@ type CaseStudyType = {
   results: string[];
   technologies: string[];
   gallery: string[];
+  locked? : true
 };
 
 export const caseStudies: CaseStudyType[] = [
@@ -21,6 +22,7 @@ export const caseStudies: CaseStudyType[] = [
     quote: "More bookings. Less hassle. The site does its job perfectly and looks great doing it.",
     author: "Samantha R.",
     role: "CEO",
+     locked : true,
     title: "Lustra",
     slug: "lustra",
     description: "Fast, elegant, and conversion-focused, it’s built to boost bookings and build trust.",
@@ -49,6 +51,7 @@ export const caseStudies: CaseStudyType[] = [
     quote: "We saw a 2x increase in conversions after launch. Seriously impressive work.",
     author: "James P.",
     role: "Product Manager",
+     locked : true,
     title: "Poppy Store",
     slug: "poppy-store",
     description: "A smooth, aesthetic shopping experience designed for growth and usability.",

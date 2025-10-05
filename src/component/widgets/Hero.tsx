@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
 
             {/* Left Content */}
             <div className="space-y-6">
-              <span className="inline-flex items-center px-4 sm:px-6 py-2 text-sm font-medium rounded-full bg-gray-300 text-gray-800">
+              <span className="inline-flex items-center px-4 sm:px-6 py-2 text-sm font-medium rounded-full bg-white/25 text-gray-800">
                 <span className="w-3.5 h-3.5 bg-green-500 rounded-full mr-2 animate-pulse"></span>
                 Available For Projects
               </span>
@@ -28,9 +28,9 @@ const HeroSection: React.FC = () => {
                 Build Products Users Love.
               </h1>
 
-              <p className="text-base sm:text-lg   text-gray-600 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem totam repellendus explicabo sunt, consequatur dignissimos mollitia.
-              </p>
+             <p className="text-base sm:text-lg text-gray-600">
+  We craft digital experiences that blend creativity with technology — helping brands stand out, connect with their audience, and leave a lasting impact.
+</p>
 
               {/* Buttons Inline */}
               <div className="flex flex-wrap gap-3 sm:gap-5 mt-14">
@@ -64,3 +64,4 @@ const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
+

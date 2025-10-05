@@ -5,14 +5,14 @@ import { HiMenu, HiX } from "react-icons/hi";
 import SectionWrapper from "../shared/ui/SectionWrapper";
 import Button from "../shared/ui/Button";
 import Link from "next/link";
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon } from "lucide-react";
+// import { Sun, Moon } from "lucide-react";
 import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
+  // const { theme, setTheme } = useTheme();
 
   const navItems = ["Home", "Portfolio", "About", "Contact"];
 
@@ -23,7 +23,7 @@ export default function Header() {
         <div
           className="absolute top-0 left-0 w-full h-full 
                      bg-gradient-to-b from-[#7264F3] to-transparent 
-                     blur-[140px] opacity-30"
+                     blur-[140px] opacity-40"
         />
       </div>
 
@@ -36,12 +36,14 @@ export default function Header() {
             transition={{ duration: 0.5 }}
           >
             <Link href="/">
-              <Image
-                src="/images/shayan-logo.svg"
-                alt="Shayan Logo"
-                width={40}
-                height={40}
-              />
+            <Image
+  src="/images/shayan-logo.svg"
+  alt="Shayan Logo"
+  width={40}
+  height={40}
+  className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14"
+/>
+
             </Link>
           </motion.div>
 
