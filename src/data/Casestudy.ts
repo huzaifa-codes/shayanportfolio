@@ -56,11 +56,11 @@ export const caseStudies: CaseStudyType[] = [
     bggridiant : 'from-[#C4F2C6] to-[#F0F0F0]',
     role: "Product Manager",
      locked : true,
-    title: "Poppy Store",
+    title: "Qarya",
     slug: "poppy-store",
     description: "A smooth, aesthetic shopping experience designed for growth and usability.",
     buttonText: "See Project",
-    overview: "Poppy Store is an online fashion retailer that wanted a modern eCommerce experience.",
+    overview: "Qarya is an online fashion retailer that wanted a modern eCommerce experience.",
     challenges: [
       "Checkout process had high abandonment rate.",
       "Slow product page loading.",

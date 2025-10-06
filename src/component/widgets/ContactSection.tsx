@@ -164,7 +164,7 @@ const Contact: React.FC = () => {
                 className="w-full bg-gray-100 text-gray-900 p-3 pr-10 rounded-md appearance-none focus:outline-none focus:ring-0"
               >
                 <option value="" disabled>
-                  What's your budget?
+                  What’s your budget?
                 </option>
                 <option value="0-100">0 - 100$</option>
                 <option value="100-500">100$ - 500$</option>

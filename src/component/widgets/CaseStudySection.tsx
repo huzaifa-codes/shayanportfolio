@@ -1,19 +1,19 @@
 'use client';
 
 import { caseStudies } from "@/data/Casestudy";
-import Button from "../shared/ui/Button";
+// import Button from "../shared/ui/Button";
 import ProjectCard from "../shared/ui/CaseStudy";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import SectionWrapper from "../shared/ui/SectionWrapper";
 
 const CaseStudySection: React.FC = () => {
-  const router = useRouter();
+  // const router = useRouter();
 
   // ✅ Function to navigate and test
-  function viewAllroute() {
-    console.log('hello world');
-    router.push('/allcasestudy');
-  }
+  // function viewAllroute() {
+  //   console.log('hello world');
+  //   router.push('/allcasestudy');
+  // }
 
   // ✅ Display only first three case studies
   const caseStudy = caseStudies.slice(0, 4);
