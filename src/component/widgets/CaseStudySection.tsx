@@ -1,7 +1,6 @@
 'use client';
 
 import { caseStudies } from "@/data/Casestudy";
-// import Button from "../shared/ui/Button";
 import ProjectCard from "../shared/ui/CaseStudy";
 // import { useRouter } from "next/navigation";
 import SectionWrapper from "../shared/ui/SectionWrapper";
@@ -15,7 +14,7 @@ const CaseStudySection: React.FC = () => {
   //   router.push('/allcasestudy');
   // }
 
-  // ✅ Display only first three case studies
+
   const caseStudy = caseStudies.slice(0, 4);
 
   return (
