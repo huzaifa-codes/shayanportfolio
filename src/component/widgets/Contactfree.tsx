@@ -6,7 +6,7 @@ export default function ContactConsultancySection() {
   return (
     <SectionWrapper>
       <section
-        className="bg-gray-50 rounded-[40px] lg:rounded-[20px] px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-20
+        className="bg-gray-50 rounded-[40px] lg:rounded-[20px]  py-12 md:px-12 md:py-16 lg:px-20 lg:py-20
                    flex flex-col items-center text-center space-y-6 font-jakarta"
       >
         {/* Heading */}

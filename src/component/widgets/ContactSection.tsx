@@ -1,116 +1,138 @@
 'use client';
 import React from 'react';
-import {
-  FaSkype,
-  FaDribbble,
-  FaBehance,
-  FaGithub,
-  FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
-  FaInstagram,
-  FaYoutube,
-  FaGlobe,
-  FaTimes,
-} from 'react-icons/fa';
+import { FaTimes, FaBehance, FaLinkedinIn, FaDribbble, FaGithub } from 'react-icons/fa';
 import Button from '../shared/ui/Button';
 import { useConContext } from '@/context/useConContext';
-
-const socialIcons = [
-  { icon: <FaSkype />, url: '#' },
-  { icon: <FaDribbble />, url: '#' },
-  { icon: <FaBehance />, url: '#' },
-  { icon: <FaGithub />, url: '#' },
-  { icon: <FaFacebookF />, url: '#' },
-  { icon: <FaTwitter />, url: '#' },
-  { icon: <FaLinkedinIn />, url: '#' },
-  { icon: <FaInstagram />, url: '#' },
-  { icon: <FaYoutube />, url: '#' },
-  { icon: <FaGlobe />, url: '#' },
-];
+import SectionWrapper from '../shared/ui/SectionWrapper';
+import Link from 'next/link';
 
 const Contact: React.FC = () => {
-  const {setContect} = useConContext() 
+  const { setContect } = useConContext();
+
+  // 🔗 Social Links Array
+  const socialLinks = [
+    { icon: <FaBehance />, href: 'https://www.behance.net/' },
+    { icon: <FaLinkedinIn />, href: 'https://www.linkedin.com/' },
+    { icon: <FaDribbble />, href: 'https://dribbble.com/' },
+    { icon: <FaGithub />, href: 'https://github.com/' },
+  ];
+
   return (
-    <div className="min-h-screen bg-[#1f252f] text-white flex flex-col  md:flex-row py-20 justify-center relative">
-      {/* Left Side - Form */}
-      <div className="flex flex-col justify-start gap-6 max-w-xl">
-        {/* Logo */}
-        <div className="bg-zinc-200 text-black font-bold px-6 py-3 rounded-full text-sm uppercase w-fit">
-          shayandesigns
+    <SectionWrapper>
+      <div className="min-h-screen flex flex-col-reverse md:flex-row items-start justify-center gap-10 md:gap-12 px-4 py-6 sm:px-6  md:px-10 text-gray-900 font-jakarta relative">
+        
+        {/* 🔮 Soft gradient background */}
+        <div className="absolute top-0 bg-center w-full h-96 pointer-events-none -z-10">
+          <div className="absolute top-0 left-0 w-full h-full 
+                         bg-gradient-to-b from-[#7264F3] to-transparent 
+                         blur-[140px] opacity-20" />
         </div>
 
-        {/* Heading */}
-        <h1 className="text-[40px] font-bold">Let’s Talk</h1>
-        <p className="text-gray-300 leading-relaxed text-[18px]">
-          Specialized product designer, with hands-on experience on multiple
-          products including customized SAAS Applications
-        </p>
+        {/* ❌ Close Button */}
+        <button
+          onClick={() => setContect(false)}
+          className="absolute  top-3 sm:top-6 right-2  text-gray-900 rounded-full p-2 md:p-3 transition-all"
+        >
+          <FaTimes size={22} className="md:size-[40px]" />
+        </button>
 
-        {/* Form */}
-        <form className="flex flex-col gap-4 mt-4">
-          <div className="flex flex-col sm:flex-row gap-4">
-            <input
-              type="text"
-              placeholder="First Name *"
-              className="w-full bg-[#2e3440] text-white p-3 rounded-md focus:outline-none"
-            />
-            <input
-              type="text"
-              placeholder="Last Name *"
-              className="w-full bg-[#2e3440] text-white p-3 rounded-md focus:outline-none"
-            />
+        {/* 📨 Left Column */}
+        <div className="w-full md:w-[40%] flex flex-col mt-10 md:mt-20 gap-6">
+          {/* Email Card */}
+          <div className="bg-gray-50 rounded-xl p-5 sm:p-6 hover:shadow-md transition-all">
+            <h3 className="text-lg sm:text-xl font-semibold mb-2">Email Me</h3>
+            <p className="text-gray-600 text-sm sm:text-[15px] mb-2">
+              Feel free to email me if you have any questions or need more details!
+            </p>
+            <a
+              href="mailto:portfoy@support.com"
+              className="!text-purple-400 font-medium underline text-sm sm:text-[15px]"
+            >
+              portfoy@support.com
+            </a>
           </div>
-          <input
-            type="email"
-            placeholder="Email Address *"
-            className="bg-[#2e3440] text-white p-3 rounded-md focus:outline-none"
-          />
-          <textarea
-            placeholder="Your Message"
-            rows={4}
-            className="bg-[#2e3440] text-white p-3 rounded-md focus:outline-none resize-none"
-          ></textarea>
-          <Button   className=" font-semibold py-3 px-6 rounded-[30px] transition mt-2 w-fit "
-          >
-            Send Message
-          </Button>
-        </form>
-      </div>
 
-      {/* Right Side */}
-      <div className="md:w-1/2 flex flex-col justify-between relative mt-10 md:mt-0">
-        {/* Close Button */}
-        <div className="absolute top-0 right-0">
-          <button onClick={()=>setContect(false)} className="bg-gray-900  text-white rounded-full  hover:bg-lime-600 p-4">
-            <FaTimes size={30} onClick={()=>setContect(false)} />
-          </button>
+          {/* Call Card */}
+          <div className="bg-gray-50 rounded-xl p-5 sm:p-6 hover:shadow-md transition-all">
+            <h3 className="text-lg sm:text-xl font-semibold mb-2">Prefer to Call?</h3>
+            <p className="text-gray-600 text-sm sm:text-[15px] mb-2">
+              Feel free to book a call if that’s more convenient and easier for you.
+            </p>
+            <a href="#" className="!text-purple-400 font-medium underline text-sm sm:text-[15px]">
+              Book a call
+            </a>
+          </div>
+
+          {/* 🌐 Let's Connect Section */}
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-gray-50 rounded-xl p-5 sm:p-6 gap-3 sm:gap-0">
+            <h3 className="text-lg sm:text-xl font-semibold">Let’s Connect</h3>
+            <div className="flex gap-4 text-gray-600 text-xl sm:text-2xl">
+              {socialLinks.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.href}
+                  target="_blank"
+                  className="hover:!text-purple-500 transition-all"
+                >
+                  {link.icon}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* Spacer (fills top space) */}
-        <div className="flex-1"></div>
-
-        {/* Social Icons & Copyright */}
-        <div className="flex flex-col items-end justify-end gap-3">
-          <div className="flex gap-3 flex-wrap justify-end">
-            {socialIcons.map((item, index) => (
-              <a
-                key={index}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-600 text-white p-2 rounded-full hover:bg-gray-500 transition-colors text-2xl"
-              >
-                {item.icon}
-              </a>
-            ))}
-          </div>
-          <p className="text-gray-400 text-sm text-right">
-            © Muhammad shayan design 2025 All rights reserved.
+        {/* 🧾 Right Form Section */}
+        <div className="flex flex-col justify-start gap-5 sm:gap-6 mt-10 md:mt-20 w-full md:w-[60%] bg-gray-50 rounded-2xl p-6 sm:p-8 md:p-10">
+          <h1 className="text-2xl sm:text-3xl font-bold">Let’s Talk</h1>
+          <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+            Specialized product designer, with hands-on experience on multiple
+            products including customized SAAS Applications.
           </p>
+
+          <form className="flex flex-col gap-4 mt-2">
+            <input
+              type="text"
+              placeholder="Full Name *"
+              className="w-full bg-gray-100 text-gray-900 placeholder:text-gray-500 p-3 rounded-md focus:outline-none focus:ring-0"
+            />
+
+            <input
+              type="email"
+              placeholder="Email Address *"
+              className="bg-gray-100 text-gray-900 placeholder:text-gray-500 p-3 rounded-md focus:outline-none focus:ring-0"
+            />
+
+            {/* 💰 Dropdown */}
+            <div className="relative">
+              <select
+                className="w-full bg-gray-100 text-gray-900 p-3 pr-10 rounded-md appearance-none focus:outline-none focus:ring-0"
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  What's your budget?
+                </option>
+                <option value="0-100">0 - 100$</option>
+                <option value="100-500">100$ - 500$</option>
+                <option value="500-1000">500$ - 1000$</option>
+              </select>
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">
+                ▼
+              </span>
+            </div>
+
+            <textarea
+              placeholder="Your Message"
+              rows={4}
+              className="bg-gray-100 text-gray-900 placeholder:text-gray-500 p-3 rounded-md resize-none focus:outline-none focus:ring-0"
+            ></textarea>
+
+            <Button variant="secondary" className="w-full md:w-auto px-6 py-3">
+              Send Message
+            </Button>
+          </form>
         </div>
       </div>
-    </div>
+    </SectionWrapper>
   );
 };
 

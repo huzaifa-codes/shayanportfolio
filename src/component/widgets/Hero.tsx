@@ -10,8 +10,9 @@ const HeroSection: React.FC = () => {
   const { setContect } = useConContext();
 
   return (
+          <SectionWrapper>
     <div className="relative font-jakarta">
-      <SectionWrapper>
+
         <section className="relative py-12 md:py-10">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-14 items-center">
 
@@ -28,8 +29,8 @@ const HeroSection: React.FC = () => {
                 Build Products Users Love.
               </h1>
 
-             <p className=" text-gray-700">
-  We craft digital experiences that blend creativity with technology — helping brands stand out, connect with their audience, and leave a lasting impact.
+             <p className=" text-gray-600 text-[16px] md:text-[19px]">
+  We craft digital experiences that blend creativity with technology  helping brands stand out, connect with their audience, and leave a lasting impact.
 </p>
 
               {/* Buttons Inline */}
@@ -58,8 +59,8 @@ const HeroSection: React.FC = () => {
 
           </div>
         </section>
-      </SectionWrapper>
     </div>
+          </SectionWrapper>
   );
 };
 

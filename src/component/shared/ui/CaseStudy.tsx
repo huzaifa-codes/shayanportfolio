@@ -140,12 +140,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <motion.div
         ref={ref}
         animate={controls}
-        className="rounded-[40px] flex flex-col md:flex-row justify-between items-start max-w-[1400px] h-auto md:h-[700px] mx-auto overflow-hidden bg-white duration-500"
+        className="rounded-2xl flex flex-col md:flex-row justify-between items-start  md:h-[700px]  overflow-hidden bg-white duration-500"
       >
-        {/* Left Content */}
-        <div className="flex flex-col justify-between h-full w-full md:max-w-[630px] py-10 px-6 sm:py-16 sm:px-10 md:p-20 font-jakarta">
+        <div className="flex flex-col justify-between h-full w-full p-15    font-jakarta">
           <div className="space-y-4 sm:space-y-6">
-            <h2 className="font-bold text-xl sm:text-2xl md:text-3xl !text-black flex items-center gap-2">
+            <h2 className="font-bold text-xl sm:text-2xl md:text-3xl text-black flex items-center gap-2">
               {title} {locked && <span className="text-gray-500 text-lg">🔒</span>}
             </h2>
 

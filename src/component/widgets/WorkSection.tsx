@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Button from "../shared/ui/Button";
+import SectionWrapper from "../shared/ui/SectionWrapper";
 
 const filters = ["All", "Mobile App", "Website", "Dashboard"];
 
@@ -44,12 +45,9 @@ export default function WorkSection() {
   const animationDuration = 18; // adjust speed (higher = slower)
 
   return (
-    <section className="relative py-10 px-4 max-w-[1500px] mx-auto">
-      <div className="absolute top-0 left-0 right-0 h-[500px] pointer-events-none -z-10">
-        <div className="w-full h-full bg-gradient-to-b from-white rounded-[80px] via-white/70 to-transparent" />
-      </div>
-
-      <div className="max-w-[1600px] mx-auto relative z-10">
+   <SectionWrapper>
+     <section className="relative py-10">
+     
         {/* Filters */}
         <div className="flex justify-center flex-wrap gap-3 mb-14">
           {filters.map((filter) => {
@@ -70,7 +68,7 @@ export default function WorkSection() {
         <div className="relative overflow-x-hidden mb-14">
           <motion.div
             ref={containerRef}
-            className="flex gap-6 w-max"
+            className="flex gap-6"
             initial={{ x: 0 }}
             animate={{ x: -scrollWidth }}
             transition={{
@@ -84,7 +82,7 @@ export default function WorkSection() {
             {[...filteredProjects, ...filteredProjects].map((project, i) => (
               <div
                 key={`${project.title}-${i}`}
-                className="flex-shrink-0 flex flex-col h-fit items-center"
+                className="flex-shrink-0 flex flex-col h-fit "
               >
                 {project.image && (
                   <img
@@ -93,14 +91,14 @@ export default function WorkSection() {
                     className="w-fit h-[300px] md:h-[400px]"
                   />
                 )}
-                <p className="mt-3 text-gray-700 font-medium text-sm sm:text-base">
+                <p className="mt-3 text-gray-700 font-medium text-[15px]">
                   {project.title}
                 </p>
               </div>
             ))}
           </motion.div>
-        </div>
       </div>
     </section>
+   </SectionWrapper>
   );
 }

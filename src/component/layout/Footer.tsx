@@ -26,8 +26,7 @@ export default function Footer() {
   return (
 <SectionWrapper>
   <div className="py-20">
-    <footer className="bg-gray-50 rounded-[40px] lg:rounded-[20px] 
-                        max-w-[1400px] w-full mx-auto px-8 sm:px-12 lg:px-20 py-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0">
+    <footer className="bg-gray-50 rounded-[40px] lg:rounded-[20px]  sm:px-12 lg:px-20 py-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0">
       
       {/* Heading */}
       <h3 className="font-jakarta font-bold   !text-black text-center lg:text-left">

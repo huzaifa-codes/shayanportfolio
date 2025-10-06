@@ -31,8 +31,9 @@ const AboutSection: React.FC = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <section id="about" className="py-12 md:py-16">
-      <SectionWrapper>
+     <SectionWrapper>
+    <section id="about" className="py-12 md:py-16 ">
+     
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           {/* Left Side: Heading */}
           <div className="md:w-1/3 font-jakarta flex items-start">
@@ -41,9 +42,9 @@ const AboutSection: React.FC = () => {
             </h2>
           </div>
 
-          {/* Right Side: Paragraphs + Experience & Education */}
+  
           <div className="md:w-2/3 space-y-6 font-jakarta text-left">
-            {/* Main Paragraphs */}
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -70,7 +71,7 @@ const AboutSection: React.FC = () => {
                 >
                   {aboutData.map((section, idx) => (
                     <div key={idx}>
-                      <h3 className="text-lg sm:text-xl font-semibold flex items-center gap-2 text-purple-400">
+                      <h3 className="text-lg sm:text-xl font-semibold flex items-center gap-2 !text-purple-400">
                         <section.icon size={20} /> {section.title}
                       </h3>
                       <div className="mt-2 space-y-2">
@@ -106,8 +107,8 @@ const AboutSection: React.FC = () => {
             </Button>
           </div>
         </div>
-      </SectionWrapper>
     </section>
+         </SectionWrapper>
   );
 };
 
