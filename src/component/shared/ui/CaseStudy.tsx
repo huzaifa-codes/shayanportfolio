@@ -29,16 +29,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const controls = useAnimation();
   const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.5 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
-  }, []);
+ useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => setIsVisible(entry.isIntersecting),
+    { threshold: 0.5 }
+  );
+
+  const currentRef = ref.current; // ✅ Copy the ref value here
+  if (currentRef) observer.observe(currentRef);
+
+  return () => {
+    if (currentRef) observer.unobserve(currentRef); // ✅ Use the copied value
+  };
+}, []);
 
   useEffect(() => {
     if (isVisible) {

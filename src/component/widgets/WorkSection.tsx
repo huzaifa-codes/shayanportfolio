@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Button from "../shared/ui/Button";
 import SectionWrapper from "../shared/ui/SectionWrapper";
-
+import Image from "next/image";
 const filters = ["All", "Mobile App", "Website", "Dashboard"];
 
 interface Project {
@@ -84,13 +84,16 @@ export default function WorkSection() {
                 key={`${project.title}-${i}`}
                 className="flex-shrink-0 flex flex-col h-fit "
               >
-                {project.image && (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-fit h-[300px] md:h-[400px]"
-                  />
-                )}
+               {project.image && (
+  <Image
+    src={project.image}
+    alt={project.title}
+    width={600} // required by Next.js Image
+    height={400}
+    className="w-fit h-[300px] md:h-[400px] object-cover rounded-md"
+  />
+)}
+
                 <p className="mt-3 text-gray-700 font-medium text-[15px]">
                   {project.title}
                 </p>

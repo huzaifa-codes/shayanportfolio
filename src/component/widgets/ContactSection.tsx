@@ -109,7 +109,7 @@ const Contact: React.FC = () => {
                 defaultValue=""
               >
                 <option value="" disabled>
-                  What's your budget?
+                  Whats your budget?
                 </option>
                 <option value="0-100">0 - 100$</option>
                 <option value="100-500">100$ - 500$</option>

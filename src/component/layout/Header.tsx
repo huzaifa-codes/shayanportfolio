@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { HiMenu, HiX } from "react-icons/hi";
 import SectionWrapper from "../shared/ui/SectionWrapper";
 import Button from "../shared/ui/Button";
 import Link from "next/link";
