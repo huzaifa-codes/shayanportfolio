@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import Button from "./Button";
-import SectionWrapper from "./SectionWrapper";
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -12,7 +11,8 @@ type ProjectCardProps = {
   imageUrl: string;
   link?: string;
   slug?: string;
-  locked?: boolean; // pass true for locked items
+  locked?: boolean;
+    mobileImg? : string // pass true for locked items
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -21,6 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   imageUrl,
   slug,
   locked = false,
+  mobileImg
 }) => {
   const router = useRouter();
 
@@ -139,41 +140,61 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   };
 
   return (
-    <SectionWrapper>
-      <motion.div
-        ref={ref}
-        animate={controls}
-        className="rounded-2xl flex flex-col md:flex-row justify-between items-start  md:h-[700px]  overflow-hidden bg-white duration-500"
+    <section>
+<motion.div
+  ref={ref}
+  animate={controls}
+  className="relative rounded-2xl overflow-hidden h-[585px] md:h-[650px] w-full"
+>
+  <Image
+    src={imageUrl}
+    alt={title}
+    fill
+    className=" transition-transform duration-500 hover:scale-105 hidden sm:block"
+  />
+
+
+  {mobileImg && (
+    <Image
+      src={mobileImg}
+      alt={`${title} mobile`}
+      fill
+      className=" block sm:hidden h-fit"
+    />
+  )}
+
+  {/* Top-left Title & Description */}
+  <div className="absolute top-8 left-8 sm:top-10 sm:left-10 md:top-14 md:left-14 text-white z-10 font-jakarta max-w-lg">
+    <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl flex items-center gap-2 drop-shadow-md">
+      {title} {locked && <span className="text-gray-300 text-lg">🔒</span>}
+    </h2>
+
+    <p className="text-[16px] sm:text-base md:text-lg text-gray-700 mt-3 leading-relaxed drop-shadow-sm">
+      {description}
+    </p>
+
+    {/* ✅ Mobile Button (under description) */}
+    <div className="mt-4 sm:hidden">
+      <Button
+        variant="secondary"
+        onClick={() => handlesingleroute(slug)}
       >
-        <div className="flex flex-col justify-between h-full w-full p-15    font-jakarta">
-          <div className="space-y-4 sm:space-y-6">
-            <h2 className="font-bold text-xl sm:text-2xl md:text-3xl text-black flex items-center gap-2">
-              {title} {locked && <span className="text-gray-500 text-lg">🔒</span>}
-            </h2>
+        View Project
+      </Button>
+    </div>
+  </div>
 
-            <p className="text-sm sm:text-base md:text-xl text-gray-600 leading-relaxed">
-              {description}
-            </p>
-          </div>
+  {/* ✅ Desktop / Tablet Button (bottom-left) */}
+  <div className="hidden sm:block absolute bottom-10 left-10 md:bottom-14 md:left-14 z-10">
+    <Button
+      variant="secondary"
+      onClick={() => handlesingleroute(slug)}
+    >
+      View Project
+    </Button>
+  </div>
+</motion.div>
 
-          {/* Button bottom aligned */}
-          <div className="mt-6 md:mt-auto w-full">
-            <Button variant="secondary" onClick={() => handlesingleroute(slug)}>
-              View Project
-            </Button>
-          </div>
-        </div>
-
-        {/* Right Image */}
-        <div className="relative w-full h-[250px] sm:h-[400px] md:h-[700px] md:w-[700px] overflow-hidden rounded-tr-[40px] rounded-br-[40px] border-none">
-          <Image
-            src={imageUrl}
-            alt={title}
-            fill
-            className="object-cover transform hover:scale-105 transition-transform duration-500"
-          />
-        </div>
-      </motion.div>
 
       {/* Modal (Password -> Email) */}
       {showModal && (
@@ -252,7 +273,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
       )}
-    </SectionWrapper>
+    </section>
   );
 };
 

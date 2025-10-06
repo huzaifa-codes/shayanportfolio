@@ -8,6 +8,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 // import { Sun, Moon } from "lucide-react";
 import Image from "next/image";
+import GradientBackground from "../shared/ui/GradientBackground";
 
 
 export default function Header() {
@@ -20,11 +21,7 @@ export default function Header() {
     <header className="relative w-full bg-background/70 backdrop-blur-md">
       {/* Gradient glow background */}
       <div className="absolute top-0 bg-center w-full h-96 pointer-events-none -z-10">
-        <div
-          className="absolute top-0 left-0 w-full h-full 
-                     bg-gradient-to-b from-[#7264F3] to-transparent 
-                     blur-[140px] opacity-40"
-        />
+      <GradientBackground/>
       </div>
 
       <SectionWrapper>

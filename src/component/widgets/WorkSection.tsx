@@ -37,12 +37,12 @@ export default function WorkSection() {
     const children = Array.from(containerRef.current.children).slice(0, filteredProjects.length) as HTMLElement[];
     let width = 0;
     children.forEach((child) => {
-      width += child.offsetWidth + 24; // gap between items
+      width += child.offsetWidth + 24;
     });
     setScrollWidth(width);
   }, [filteredProjects]);
 
-  const animationDuration = 18; // adjust speed (higher = slower)
+  const animationDuration = 18;
 
   return (
    <SectionWrapper>

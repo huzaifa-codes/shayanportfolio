@@ -4,7 +4,7 @@ type CaseStudyType = {
   author: string;
   role: string;
   title: string;
-  slug: string;   // 👈 new field
+  slug: string;   
   description: string;
   buttonText: string;
   overview: string;
@@ -14,18 +14,20 @@ type CaseStudyType = {
   technologies: string[];
   gallery: string[];
   locked? : true
+   mobileImg? : string
 };
 
 export const caseStudies: CaseStudyType[] = [
   {
-    imageUrl: "/images/lustra.jpg",
+    imageUrl: "/images/casestudy1.png",
     quote: "More bookings. Less hassle. The site does its job perfectly and looks great doing it.",
     author: "Samantha R.",
+    mobileImg : '/images/mobileimg.png',
     role: "CEO",
      locked : true,
-    title: "Lustra",
+    title: "Truck Booking App",
     slug: "lustra",
-    description: "Fast, elegant, and conversion-focused, it’s built to boost bookings and build trust.",
+    description: "I designed BookMyTruck, a mobile app that makes truck booking and delivery tracking simple and hassle-free.",
     buttonText: "Read More",
     overview: "Lustra is a premium booking platform that needed a sleek UX to increase conversions.",
     challenges: [

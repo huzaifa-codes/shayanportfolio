@@ -5,6 +5,7 @@ import Button from "../shared/ui/Button";
 import ProjectCard from "../shared/ui/CaseStudy";
 import { useRouter } from "next/navigation";
 import SectionWrapper from "../shared/ui/SectionWrapper";
+import GradientBackground from "../shared/ui/GradientBackground";
 
 const CaseStudySection: React.FC = () => {
   const router = useRouter();
@@ -21,18 +22,13 @@ const CaseStudySection: React.FC = () => {
   return (
  <SectionWrapper>
      <section className="relative py-32 w-full h-full">
-      <div
-        className="absolute top-0 left-0 w-full h-full 
-                   bg-gradient-to-b from-[#7264F3] to-transparent 
-                   blur-[140px] opacity-30 pointer-events-none"
-      />
-
+     {/* <GradientBackground/> */}
       <div className="relative z-10  space-y-10">
-       <div className="flex justify-between">
-         <h2 className="font-bold text-center text-[22px] md:text-[34px] font-jakarta">
+       <div className="flex justify-between items-center">
+         <h2 className="font-bold text-center text-[18px] md:text-[34px] font-jakarta">
           Some of My Selected Projects
         </h2>
-         <Button variant="secondary" onClick={viewAllroute}>
+         <Button variant="secondary"  onClick={viewAllroute}>
             View All
           </Button>
        </div>
