@@ -1,5 +1,6 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import { FaTimes, FaBehance, FaLinkedinIn, FaDribbble, FaGithub } from 'react-icons/fa';
 import Button from '../shared/ui/Button';
 import { useConContext } from '@/context/useConContext';
@@ -8,8 +9,52 @@ import Link from 'next/link';
 
 const Contact: React.FC = () => {
   const { setContect } = useConContext();
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    budget: '',
+    message: '',
+  });
 
-  // 🔗 Social Links Array
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  // Handle form input changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError('');
+    setSuccess('');
+
+    // Validate form data
+    if (!formData.fullName || !formData.email || !formData.message) {
+      setError('Please fill in all required fields.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+       await axios.post('/api/email-sender', formData);
+      setSuccess('Your message has been sent successfully!');
+      setFormData({ fullName: '', email: '', budget: '', message: '' });
+    } catch (err) {
+      console.error(err);  // Logging error for debugging
+      setError('Failed to send the message. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Social Links
   const socialLinks = [
     { icon: <FaBehance />, href: 'https://www.behance.net/' },
     { icon: <FaLinkedinIn />, href: 'https://www.linkedin.com/' },
@@ -19,8 +64,7 @@ const Contact: React.FC = () => {
 
   return (
     <SectionWrapper>
-      <div className="min-h-screen flex flex-col-reverse md:flex-row items-start justify-center gap-10 md:gap-12 px-4 py-6 sm:px-6  md:px-10 text-gray-900 font-jakarta relative">
-        
+      <div className="min-h-screen flex flex-col-reverse md:flex-row items-start justify-center gap-10 md:gap-12 px-4 py-6 sm:px-6 md:px-10 text-gray-900 font-jakarta relative">
         {/* 🔮 Soft gradient background */}
         <div className="absolute top-0 bg-center w-full h-96 pointer-events-none -z-10">
           <div className="absolute top-0 left-0 w-full h-full 
@@ -28,10 +72,9 @@ const Contact: React.FC = () => {
                          blur-[140px] opacity-20" />
         </div>
 
-        {/* ❌ Close Button */}
         <button
           onClick={() => setContect(false)}
-          className="absolute  top-3 sm:top-6 right-2  text-gray-900 rounded-full p-2 md:p-3 transition-all"
+          className="absolute top-3 sm:top-6 right-2 text-gray-900 rounded-full p-2 md:p-3 transition-all"
         >
           <FaTimes size={22} className="md:size-[40px]" />
         </button>
@@ -85,31 +128,43 @@ const Contact: React.FC = () => {
         <div className="flex flex-col justify-start gap-5 sm:gap-6 mt-10 md:mt-20 w-full md:w-[60%] bg-gray-50 rounded-2xl p-6 sm:p-8 md:p-10">
           <h1 className="text-2xl sm:text-3xl font-bold">Let’s Talk</h1>
           <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-            Specialized product designer, with hands-on experience on multiple
-            products including customized SAAS Applications.
+            Specialized product designer, with hands-on experience on multiple products including customized SAAS Applications.
           </p>
 
-          <form className="flex flex-col gap-4 mt-2">
+          {/* Form */}
+          <form className="flex flex-col gap-4 mt-2" onSubmit={handleSubmit}>
+            {error && <div className="text-red-500">{error}</div>}
+            {success && <div className="text-green-500">{success}</div>}
+
             <input
               type="text"
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleChange}
               placeholder="Full Name *"
               className="w-full bg-gray-100 text-gray-900 placeholder:text-gray-500 p-3 rounded-md focus:outline-none focus:ring-0"
+              required
             />
 
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Email Address *"
               className="bg-gray-100 text-gray-900 placeholder:text-gray-500 p-3 rounded-md focus:outline-none focus:ring-0"
+              required
             />
 
-            {/* 💰 Dropdown */}
             <div className="relative">
               <select
+                name="budget"
+                value={formData.budget}
+                onChange={handleChange}
                 className="w-full bg-gray-100 text-gray-900 p-3 pr-10 rounded-md appearance-none focus:outline-none focus:ring-0"
-                defaultValue=""
               >
                 <option value="" disabled>
-                  Whats your budget?
+                  What's your budget?
                 </option>
                 <option value="0-100">0 - 100$</option>
                 <option value="100-500">100$ - 500$</option>
@@ -121,13 +176,18 @@ const Contact: React.FC = () => {
             </div>
 
             <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Your Message"
               rows={4}
               className="bg-gray-100 text-gray-900 placeholder:text-gray-500 p-3 rounded-md resize-none focus:outline-none focus:ring-0"
+              required
             ></textarea>
 
-            <Button variant="secondary" className="w-full md:w-auto px-6 py-3">
-              Send Message
+            <Button variant="secondary" className="w-full md:w-auto px-6 py-3" disabled={isSubmitting}>
+             
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </Button>
           </form>
         </div>

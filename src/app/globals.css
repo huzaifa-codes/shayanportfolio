@@ -85,12 +85,11 @@
 
 /* 🌐 Base Styles */
 body {
-  @apply bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300;
   font-family: var(--font-jakarta);
 }
 
 a {
-  @apply text-[var(--primary)] hover:underline;
+  @apply text-[var(--primary)] hover:text-purple-400;
 }
 
 /* 🃏 Card Component */

@@ -28,7 +28,7 @@ export default function Button({
 
   const sizeClasses: Record<string, string> = {
     sm: "px-4 py-2 text-sm",
-    md: " px-4 py-2 md:px-6  md:py-[10px] text-sm sm:text-lg",
+    md: " px-4 py-3 md:px-6  md:py-[10px] text-sm sm:text-lg",
     lg: "px-9 py-4 text-lg sm:text-xl",
   };
 

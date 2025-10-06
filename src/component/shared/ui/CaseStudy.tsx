@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import Button from "./Button";
-import SectionWrapper from "./SectionWrapper";
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -12,7 +11,8 @@ type ProjectCardProps = {
   imageUrl: string;
   link?: string;
   slug?: string;
-  locked?: boolean; // pass true for locked items
+  locked?: boolean; 
+   bggridiant? : string
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -21,6 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   imageUrl,
   slug,
   locked = false,
+  bggridiant = ''
 }) => {
   const router = useRouter();
 
@@ -140,12 +141,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <section>
-  <motion.div
+<motion.div
   ref={ref}
   animate={controls}
-  className="rounded-2xl flex flex-col md:flex-row justify-between items-start md:h-[700px] overflow-hidden duration-500 bg-gradient-to-b from-[#ffffff] to-[#FFE3A6]"
+ className={`bg-gradient-to-r ${bggridiant && bggridiant}  rounded-2xl flex flex-col md:flex-row justify-between items-start md:h-[700px] overflow-hidden duration-500`}
 >
-  {/* Left Section */}
+
+
   <div className="flex flex-col justify-between gap-3 h-full w-full p-8 md:p-16 font-jakarta relative">
     <div className="space-y-4 sm:space-y-6">
       <h2 className="font-bold text-xl sm:text-2xl md:text-3xl text-black flex items-center gap-2">
@@ -158,7 +160,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
  </div>
       <div>
         <Button variant="secondary" onClick={() => handlesingleroute(slug)}>
-          View Project
+          Read Case Study
         </Button>
       </div>
    

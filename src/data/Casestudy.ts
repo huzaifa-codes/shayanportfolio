@@ -14,7 +14,8 @@ type CaseStudyType = {
   technologies: string[];
   gallery: string[];
   locked? : true
-   mobileImg? : string
+   mobileImg? : string;
+   bggridiant? : string
 };
 
 export const caseStudies: CaseStudyType[] = [
@@ -22,9 +23,9 @@ export const caseStudies: CaseStudyType[] = [
     imageUrl: "/images/casestudy1.png",
     quote: "More bookings. Less hassle. The site does its job perfectly and looks great doing it.",
     author: "Samantha R.",
-    mobileImg : '/images/mobileimg.png',
     role: "CEO",
      locked : true,
+     bggridiant : 'from-[#FFFEFB] to-[#FFE3A6]',
     title: "Truck Booking App",
     slug: "lustra",
     description: "I designed BookMyTruck, a mobile app that makes truck booking and delivery tracking simple and hassle-free.",
@@ -49,9 +50,10 @@ export const caseStudies: CaseStudyType[] = [
     gallery: ["/images/lake.jpg", "/images/forest.jpg"],
   },
   {
-    imageUrl: "/images/poppy.jpg",
+ imageUrl: "/images/casestudy2.png",
     quote: "We saw a 2x increase in conversions after launch. Seriously impressive work.",
     author: "James P.",
+    bggridiant : 'from-[#C4F2C6] to-[#F0F0F0]',
     role: "Product Manager",
      locked : true,
     title: "Poppy Store",
