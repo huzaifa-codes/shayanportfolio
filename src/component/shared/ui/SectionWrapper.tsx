@@ -6,7 +6,7 @@ interface SectionWrapperProps {
 
 const SectionWrapper: React.FC<SectionWrapperProps> = ({ children }) => {
   return (
-    <div className="max-w-[1200px]     mx-auto">
+    <div className="max-w-[1200px] mx-auto">
       {children}
     </div>
   );
