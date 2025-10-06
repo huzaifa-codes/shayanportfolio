@@ -97,7 +97,7 @@ const AboutSection: React.FC = () => {
               variant="textOnly"
               className="flex items-center gap-2"
             >
-              {showMore ? "Hide My Journey" : "Read My Journey and Experience"}
+              {showMore ? "Hide my journey" : "Read my journey and experience"}
               <motion.span
                 animate={{ rotate: showMore ? 180 : 0 }}
                 transition={{ duration: 0.4 }}

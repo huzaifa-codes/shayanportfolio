@@ -5,7 +5,6 @@ import Button from "../shared/ui/Button";
 import ProjectCard from "../shared/ui/CaseStudy";
 import { useRouter } from "next/navigation";
 import SectionWrapper from "../shared/ui/SectionWrapper";
-import GradientBackground from "../shared/ui/GradientBackground";
 
 const CaseStudySection: React.FC = () => {
   const router = useRouter();
