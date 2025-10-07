@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={jakarta.variable}>
       <Head>
-        <meta name="google-site-verification" content="kovY2fOWBJnu2cBtv0jrTiD0BozLPQaXTVtTmG1fMfs" />
+       <meta name="google-site-verification" content="kovY2fOWBJnu2cBtv0jrTiD0BozLPQaXTVtTmG1fMfs" />
       </Head>
       <body>
         <ThemeProvider
