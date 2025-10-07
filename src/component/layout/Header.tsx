@@ -45,7 +45,7 @@ export default function Header() {
           </motion.div>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8 font-jakarta text-[16px] lg:text-[17px]">
+          <nav className="hidden md:flex items-center gap-8 font-jakarta text-[13px] lg:text-[15px]">
             {navItems.map((item, idx) => (
               <motion.div
                 key={item}
