@@ -46,7 +46,7 @@ export default function WorkSection() {
 
   return (
    <SectionWrapper>
-     <section className="relative py-10">
+     <section className="relative  rounded-2xl  ">
      
         {/* Filters */}
         <div className="flex justify-center flex-wrap gap-3 mb-14">

@@ -150,11 +150,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   <div className="flex flex-col justify-between gap-3 h-full w-full p-8 md:p-16 font-jakarta relative">
     <div className="space-y-4 sm:space-y-6">
-      <h2 className="font-bold text-xl sm:text-2xl md:text-3xl text-black flex items-center gap-2">
+      <h2 className="font-bold text-xl sm:text-2xl md:text-2xl text-black flex items-center gap-2">
         {title} {locked && <span className="text-gray-500 text-lg">🔒</span>}
       </h2>
 
-      <p className="text-sm sm:text-base md:text-lg text-gray-800 leading-relaxed">
+      <p className="text-[15px] text-gray-800 leading-relaxed">
         {description}
       </p>
  </div>
