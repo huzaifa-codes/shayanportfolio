@@ -45,11 +45,12 @@ export default function WorkSection() {
   const animationDuration = 18;
 
   return (
-   <SectionWrapper>
+   <SectionWrapper className="py-20">
      <section className="relative  rounded-2xl  ">
-     
-        {/* Filters */}
-        <div className="flex justify-center flex-wrap gap-3 mb-14">
+
+      <h2 className="text-center mb-10">Glimpse into what I design</h2>
+       
+        {/* <div className="flex justify-center flex-wrap gap-3  mb-10">
           {filters.map((filter) => {
             const isActive = activeFilter === filter;
             return (
@@ -62,10 +63,10 @@ export default function WorkSection() {
 </Button>
             );
           })}
-        </div>
+        </div> */}
 
         {/* Continuous Scroll */}
-        <div className="relative overflow-x-hidden mb-14">
+        <div className="relative overflow-x-hidden">
           <motion.div
             ref={containerRef}
             className="flex gap-6"

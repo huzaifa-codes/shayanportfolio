@@ -18,12 +18,12 @@ const CaseStudySection: React.FC = () => {
   const caseStudy = caseStudies.slice(0, 4);
 
   return (
- <SectionWrapper>
-     <section className="relative py-32 w-full h-full">
+ <SectionWrapper className="py-20">
+     <section className="relative  w-full h-full">
      {/* <GradientBackground/> */}
       <div className="relative z-10  space-y-10">
        <div className="flex justify-between items-center">
-         <h2 className="text-2xl md:text-4xl font-bold">
+         <h2>
               Recent Projects       </h2>
          {/* <Button variant="secondary"  onClick={viewAllroute}>
             View All

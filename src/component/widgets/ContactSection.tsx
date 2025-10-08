@@ -6,6 +6,7 @@ import Button from '../shared/ui/Button';
 import { useConContext } from '@/context/useConContext';
 import SectionWrapper from '../shared/ui/SectionWrapper';
 import Link from 'next/link';
+import GradientBackground from '../shared/ui/GradientBackground';
 
 const Contact: React.FC = () => {
   const { setContect } = useConContext();
@@ -63,20 +64,14 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <SectionWrapper>
-      <div className="min-h-screen flex flex-col-reverse md:flex-row items-start justify-center gap-10 md:gap-12 px-4 py-6 sm:px-6 md:px-10 text-gray-900 font-jakarta relative">
-        {/* 🔮 Soft gradient background */}
-        <div className="absolute top-0 bg-center w-full h-96 pointer-events-none -z-10">
-          <div className="absolute top-0 left-0 w-full h-full 
-                         bg-gradient-to-b from-[#7264F3] to-transparent 
-                         blur-[140px] opacity-20" />
-        </div>
-
+    <SectionWrapper className='py-20'>
+      <div className=" flex flex-col-reverse md:flex-row items-start justify-center gap-10 md:gap-12 px-4  sm:px-6 md:px-10 text-gray-900 font-jakarta relative">
+       <GradientBackground/>
         <button
           onClick={() => setContect(false)}
-          className="absolute top-3 sm:top-6 right-2 text-gray-900 rounded-full p-2 md:p-3 transition-all"
+          className="absolute top-[-20px]  sm:top-2 right-2 text-gray-900 rounded-full p-2 md:p-3 transition-all"
         >
-          <FaTimes size={22} className="md:size-[40px]" />
+          <FaTimes size={30} className="md:size-[40px]" />
         </button>
 
         {/* 📨 Left Column */}
@@ -91,7 +86,7 @@ const Contact: React.FC = () => {
               href="mailto:portfoy@support.com"
               className="!text-purple-400 font-medium underline text-sm sm:text-[15px]"
             >
-              portfoy@support.com
+              shayanbusiness60@gmail.com
             </a>
           </div>
 
@@ -156,8 +151,8 @@ const Contact: React.FC = () => {
               required
             />
 
-            <div className="relative">
-              <select
+            <div className="relative font-jakarta">
+              <select 
                 name="budget"
                 value={formData.budget}
                 onChange={handleChange}

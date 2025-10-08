@@ -98,10 +98,12 @@ a {
 }
 
 /* 🎛 Buttons */
-h1, h2, h3, h4, h5, h6 {
+h1 {
   color: var(--foreground);
   @apply tracking-tighter;
 }
+
+
 
 .btn-primary {
   background-color: var(--primary);
@@ -145,10 +147,10 @@ h1, h2, h3, h4, h5, h6 {
     @apply text-[53px] font-bold leading-tight;
   }
   h2 {
-    @apply text-[40px] font-semibold leading-snug;
+    @apply text-[33px] font-semibold ;
   }
   h3 {
-    @apply text-[23px] font-medium leading-snug;
+    @apply text-[23px] font-medium;
   }
   p {
     @apply text-[19px];

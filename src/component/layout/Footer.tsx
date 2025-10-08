@@ -24,8 +24,8 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-<SectionWrapper>
-  <div className="py-20">
+<SectionWrapper className="py-14">
+  <div>
     <footer className="bg-gray-50 rounded-[40px] lg:rounded-[20px]  sm:px-12 lg:px-20 py-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0">
       
       {/* Heading */}
@@ -42,9 +42,9 @@ export default function Footer() {
             aria-label={label}
             className={`flex items-center justify-center ${colorClass} 
                         w-12 h-12 sm:w-14 sm:h-14 md:w-12 md:h-12 rounded-full 
-                        shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105`}
+                         hover:text-purple-400 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105`}
           >
-            <Icon className="text-2xl text-black"/>
+            <Icon className="text-2xl text-black hover:text-purple-400"/>
           </a>
         ))}
       </div>

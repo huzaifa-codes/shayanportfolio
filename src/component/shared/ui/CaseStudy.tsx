@@ -148,13 +148,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 >
 
 
-  <div className="flex flex-col justify-between gap-3 h-full w-full p-8 md:p-16 font-jakarta relative">
+  <div className="flex flex-col space-y-4 justify-between gap-3 h-full w-full p-8 md:p-16 font-jakarta relative">
     <div className="space-y-4 sm:space-y-6">
       <h2 className="font-bold text-xl sm:text-2xl md:text-2xl text-black flex items-center gap-2">
         {title} {locked && <span className="text-gray-500 text-lg">🔒</span>}
       </h2>
 
-      <p className="text-[15px] text-gray-800 leading-relaxed">
+      <p className="text-[16px] text-gray-800 leading-relaxed">
         {description}
       </p>
  </div>
@@ -167,7 +167,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   </div>
 
   {/* Right Image */}
-  <div className="relative w-full md:w-[595px] h-[400px] md:h-[700px] flex-shrink-0">
+  <div className="relative w-full md:w-[595px] h-[400px] md:h-[700px] flex-shrink-0  mt-3">
     <Image
       src={imageUrl}
       alt={title}

@@ -10,10 +10,10 @@ const HeroSection: React.FC = () => {
   const { setContect } = useConContext();
 
   return (
-          <SectionWrapper>
+          <SectionWrapper className="py-5 md:py-0">
     <div className="relative font-jakarta">
 
-        <section className="relative py-12 md:py-10">
+        <section className="relative">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-14 items-center">
 
             {/* Left Content */}

@@ -31,13 +31,13 @@ const AboutSection: React.FC = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-     <SectionWrapper>
-    <section id="about" className="py-12 md:py-16 ">
+     <SectionWrapper className="py-20">
+    <section id="about">
      
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           {/* Left Side: Heading */}
           <div className="md:w-1/3 font-jakarta flex items-start">
-            <h2 className="text-2xl md:text-4xl font-bold sticky md:top-32">
+            <h2 className="">
               About Me
             </h2>
           </div>
@@ -51,10 +51,10 @@ const AboutSection: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="space-y-4"
             >
-              <p className="text-base sm:text-lg leading-relaxed">
-                Im Shayan, a Product Designer who loves creating clean, meaningful, and user-friendly experiences. I started my journey five years ago as a freelance graphic designer, exploring visuals and creativity in every form. Soon after, I discovered UI/UX design, and it just felt right. Since then, Ive focused on combining visuals with purpose, designing interfaces that not only look good but feel easy to use.
+              <p className="text-base  leading-relaxed">
+                i&apos;m Shayan, a Product Designer who loves creating clean, meaningful, and user-friendly experiences. I started my journey five years ago as a freelance graphic designer, exploring visuals and creativity in every form. Soon after, I discovered UI/UX design, and it just felt right. Since then, Ive focused on combining visuals with purpose, designing interfaces that not only look good but feel easy to use.
               </p>
-              <p className="text-base sm:text-lg leading-relaxed">
+              <p className="text-base  leading-relaxed">
                 With 3+ years of experience in UX design, I specialize in creating intuitive, high-impact digital products that truly make a difference.
               </p>
             </motion.div>
@@ -67,21 +67,22 @@ const AboutSection: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.5 }}
-                  className="space-y-6 mt-6"
+                  className="space-y-12 mt-14"
                 >
-                  {aboutData.map((section, idx) => (
+                   {aboutData.map((section, idx) => (
                     <div key={idx}>
-                      <h3 className="text-lg sm:text-xl font-semibold flex items-center gap-2 !text-purple-400">
+                      <h3 className="text-lg sm:text-xl font-semibold flex  items-center gap-2 !text-purple-400">
                         <section.icon size={20} /> {section.title}
                       </h3>
                       <div className="mt-2 space-y-2">
                         {section.items.map((item, i) => (
                           <div
                             key={i}
-                            className="flex flex-col sm:flex-row justify-between border-b border-gray-400 py-2"
+                            className="grid grid-cols-3 gap-[30px] md:gap-[170px]  border-b border-gray-200 py-2"
                           >
-                            <span className="font-medium">{item.title}</span>
-                            <span className="text-sm sm:text-base text-gray-500 sm:text-right">{item.company} | {item.period}</span>
+                            <h4 className="md:w-[160px] text-[12px] md:text-[14px]">{item.title}</h4>
+                            <span className="md:w-[160px] text-[12px] md:text-[14px]">{item.company}</span>
+                             <span className="text-[12px]">{item.period}</span>
                           </div>
                         ))}
                       </div>
