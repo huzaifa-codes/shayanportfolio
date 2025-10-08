@@ -22,7 +22,7 @@ export default function Button({
     secondary: "bg-black text-white hover:bg-gray-300",
     outline: "border border-gray-300 text-gray-800 hover:bg-gray-100",
     textOnly:
-      "bg-transparent text-purple-500 text-lg  border-none px-0 py-0",
+      "bg-transparent text-purple-500 text-[16px]  border-none px-0 py-0",
     accent: "bg-purple-400 text-black hover:bg-amber-500",
   };
 

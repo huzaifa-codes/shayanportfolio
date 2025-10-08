@@ -22,7 +22,7 @@ export default function ContactConsultancySection() {
 
         {/* Buttons */}
        <div className="flex flex-row gap-3 sm:gap-6 mt-6  w-full sm:w-auto justify-center">
-  <Button variant="primary">
+  <Button>
     Book A Meeting
   </Button>
   <Button variant="secondary">

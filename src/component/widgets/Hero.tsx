@@ -23,7 +23,7 @@ const HeroSection: React.FC = () => {
                 Available For Projects
               </span>
 
-              <h1 className="font-bold text-3xl sm:text-4xl md:text-[44px]">
+              <h1 className="font-bold text-[33px] sm:text-4xl md:text-[44px]">
                 Sr. UX Designer{" "}
                 <span className="text-purple-500">Helping Founders & Startups</span>{" "}
                 Build Products Users Love.

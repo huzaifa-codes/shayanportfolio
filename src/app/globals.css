@@ -147,7 +147,7 @@ h1 {
     @apply text-[53px] font-bold leading-tight;
   }
   h2 {
-    @apply text-[33px] font-semibold ;
+    @apply   text-[25px] md:text-[30px] font-semibold ;
   }
   h3 {
     @apply text-[23px] font-medium;
@@ -155,5 +155,16 @@ h1 {
   p {
     @apply text-[19px];
   }
+
 }
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
 

@@ -37,7 +37,7 @@ const AboutSection: React.FC = () => {
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           {/* Left Side: Heading */}
           <div className="md:w-1/3 font-jakarta flex items-start">
-            <h2 className="">
+            <h2>
               About Me
             </h2>
           </div>

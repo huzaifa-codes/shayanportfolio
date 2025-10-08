@@ -86,7 +86,7 @@ function TagItem({ icon: Icon, text }: { icon: IconType; text: string }) {
                  bg-gradient-to-r from-gray-50 to-gray-100 text-black rounded-full"
     >
       <Icon className="text-purple-400" />
-      <span className="font-jakarta text-[13px]">{text}</span>
+      <span className="font-jakarta text-[15px]">{text}</span>
     </div>
   );
 }

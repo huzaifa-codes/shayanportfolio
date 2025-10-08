@@ -48,7 +48,7 @@ export default function WorkSection() {
    <SectionWrapper className="py-20">
      <section className="relative  rounded-2xl  ">
 
-      <h2 className="text-center mb-10">Glimpse into what I design</h2>
+      <h2 className="text-center  mb-8">Glimpse into what I design</h2>
        
         {/* <div className="flex justify-center flex-wrap gap-3  mb-10">
           {filters.map((filter) => {
@@ -66,7 +66,7 @@ export default function WorkSection() {
         </div> */}
 
         {/* Continuous Scroll */}
-        <div className="relative overflow-x-hidden">
+        <div className="relative overflow-x-hidden rounded-2xl">
           <motion.div
             ref={containerRef}
             className="flex gap-6"

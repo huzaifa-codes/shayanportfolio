@@ -23,7 +23,7 @@ const CaseStudySection: React.FC = () => {
      {/* <GradientBackground/> */}
       <div className="relative z-10  space-y-10">
        <div className="flex justify-between items-center">
-         <h2>
+         <h2 >
               Recent Projects       </h2>
          {/* <Button variant="secondary"  onClick={viewAllroute}>
             View All
