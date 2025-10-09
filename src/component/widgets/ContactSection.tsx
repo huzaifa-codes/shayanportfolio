@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
               href="mailto:portfoy@support.com"
               className="!text-purple-400 font-medium underline text-sm sm:text-[15px]"
             >
-              shayanbusiness60@gmail.com
+              shayandesigns60@gmail.com
             </a>
           </div>
 
@@ -96,9 +96,15 @@ const Contact: React.FC = () => {
             <p className="text-gray-600 text-sm sm:text-[15px] mb-2">
               Feel free to book a call if that’s more convenient and easier for you.
             </p>
-            <a href="#" className="!text-purple-400 font-medium underline text-sm sm:text-[15px]">
-              Book a call
-            </a>
+          <a
+  href="https://wa.me/923398918814?text=Hello%20Shayandesigns%2C%20I%20want%20to%20book%20a%20call!"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="!text-purple-400 font-medium underline text-sm sm:text-[15px]"
+>
+  Book a call
+</a>
+
           </div>
 
           {/* 🌐 Let's Connect Section */}
