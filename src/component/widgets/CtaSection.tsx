@@ -1,8 +1,11 @@
+
 import Button from "../shared/ui/Button";
 import SectionWrapper from "../shared/ui/SectionWrapper";
 import { FiDownload } from "react-icons/fi";
+import { useConContext } from "@/context/useConContext";
 
 export default function ContactConsultancySection() {
+   const { setContect } = useConContext();
   return (
     <SectionWrapper className="py-14">
       <section
@@ -22,7 +25,7 @@ export default function ContactConsultancySection() {
         {/* Buttons */}
        <div className="flex flex-row gap-3 sm:gap-6 mt-5  w-full sm:w-auto justify-center">
  <a
-  href="https://calendly.com/huzaifa-dev/30min" // <-- apna Calendly link daalna yahan
+  href="https://calendly.com/huzaifabusiness60/30min" // <-- apna Calendly link daalna yahan
   target="_blank"
   rel="noopener noreferrer"
 >
@@ -31,7 +34,7 @@ export default function ContactConsultancySection() {
   </Button>
 </a>
 
-  <Button variant="secondary">
+  <Button variant="secondary" onClick={()=> setContect(true)}>
     Partner With Me
   </Button>
 </div>
