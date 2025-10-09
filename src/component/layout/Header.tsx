@@ -63,7 +63,16 @@ export default function Header() {
 
           {/* Right Button */}
           <div className="hidden md:flex items-center">
-            <Button>Download Resume</Button>
+         <Button>
+  <a
+    href="https://drive.google.com/file/d/1fozdLXTexuaqCvo6AHPydsTLCiNwpzt0/view?usp=sharing"
+          download
+    className="text-white"
+  >
+    Download Resume
+  </a>
+</Button>
+
           </div>
 
           {/* Mobile Button */}

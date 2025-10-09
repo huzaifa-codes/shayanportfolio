@@ -32,19 +32,19 @@ export default function RootLayout({
        <meta name="google-site-verification" content="kovY2fOWBJnu2cBtv0jrTiD0BozLPQaXTVtTmG1fMfs" />
       </Head>
       <body>
-        <ThemeProvider
+        {/* <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange
-        >
+        > */}
           {/* ✅ Wrap ContextProvider */}
           <ContextProvider>
             <Header />
             {children}
             <Footer />
           </ContextProvider>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );

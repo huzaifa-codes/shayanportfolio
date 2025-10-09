@@ -95,7 +95,7 @@ export default function WorkSection() {
   />
 )}
 
-                <p className="mt-3 text-gray-700 font-medium text-[15px]">
+                <p className="mt-3 text-gray-700 font-medium text-[12px]">
                   {project.title}
                 </p>
               </div>

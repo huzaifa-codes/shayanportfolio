@@ -3,38 +3,32 @@ import {
   SiBehance,
   SiDribbble,
   SiLinkedin,
-  SiFigma,
-  SiDiscord,
+  SiFacebook,
   SiInstagram,
-  SiGoogle,
-  SiReddit,
 } from "react-icons/si";
 import SectionWrapper from "../shared/ui/SectionWrapper";
 
 const socialLinks = [
-  { Icon: SiBehance, label: "Behance", href: "#", colorClass: "text-blue-600" },
+    { Icon: SiLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/shayanuiux/", colorClass: "text-blue-700" },
+  { Icon: SiBehance, label: "Behance", href: "https://www.behance.net/Shayandesigns", colorClass: "text-blue-600" },
   { Icon: SiDribbble, label: "Dribbble", href: "#", colorClass: "text-pink-600" },
-  { Icon: SiLinkedin, label: "LinkedIn", href: "#", colorClass: "text-blue-700" },
-  { Icon: SiFigma, label: "Figma", href: "#", colorClass: "text-green-600" },
-  { Icon: SiDiscord, label: "Discord", href: "#", colorClass: "text-indigo-600" },
   { Icon: SiInstagram, label: "Instagram", href: "#", colorClass: "text-pink-500" },
-  { Icon: SiGoogle, label: "Google", href: "#", colorClass: "text-red-600" },
-  { Icon: SiReddit, label: "Reddit", href: "#", colorClass: "text-orange-500" },
+  { Icon: SiFacebook, label: "Facebook", href: "#", colorClass: "text-orange-500" },
 ];
 
 export default function Footer() {
   return (
-<SectionWrapper className="py-14">
+<SectionWrapper className="mb-10">
   <div>
     <footer className="bg-gray-50 rounded-[40px] lg:rounded-[20px]  sm:px-12 lg:px-20 py-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0">
       
       {/* Heading */}
-      <h3 className="font-jakarta font-bold   !text-black text-center lg:text-left">
-        Let’s Connect!
+      <h3 className="font-jakarta  flex gap-5  items-center  !text-black text-center lg:text-left">
+        <span className="text-gray-400 text-2xl">Say hi</span> shayandesigns60@gmail.com
       </h3>
 
       {/* Social Icons */}
-      <div className="flex flex-wrap justify-center lg:justify-end gap-4 sm:gap-6 text-3xl sm:text-4xl md:text-[40px]">
+      <div className="flex flex-wrap justify-center lg:justify-end gap-4 sm:gap-5 text-3xl sm:text-4xl md:text-[40px]">
         {socialLinks.map(({ Icon, label, href, colorClass }) => (
           <a
             key={label}

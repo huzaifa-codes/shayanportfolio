@@ -7,7 +7,7 @@ import CaseStudySection from '../component/widgets/CaseStudySection'
 import ContactSection from '../component/widgets/ContactSection'
 import { useConContext } from '../context/useConContext'
 import { motion, AnimatePresence } from 'framer-motion'
-import ContactConsultancySection from '../component/widgets/Contactfree'
+import ContactConsultancySection from '../component/widgets/CtaSection'
 
 const HomeModule: React.FC = () => {
   const { Contect } = useConContext()

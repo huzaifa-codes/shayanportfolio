@@ -88,9 +88,7 @@ body {
   font-family: var(--font-jakarta);
 }
 
-a {
-  @apply text-[var(--primary)] hover:text-purple-400;
-}
+
 
 /* 🃏 Card Component */
 .card {
@@ -156,15 +154,6 @@ h1 {
     @apply text-[19px];
   }
 
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-33.333%);
-  }
 }
 
 
