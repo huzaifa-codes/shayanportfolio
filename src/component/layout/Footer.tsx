@@ -20,7 +20,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <SectionWrapper className="py-10 ">
-      <footer className="bg-gray-50 rounded-[40px] lg:rounded-[20px] sm:px-12 lg:px-20 py-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0">
+      <footer className="bg-gray-50 rounded-[40px] lg:rounded-[20px] sm:px-12  py-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0">
 
         {/* Say Hi Section */}
         <div className="flex flex-col md:flex-row items-center md:justify-between gap-2 md:gap-5">

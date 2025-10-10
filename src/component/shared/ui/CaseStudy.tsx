@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FiArrowRight } from "react-icons/fi";
 import { AiOutlineLock, AiOutlineClose } from "react-icons/ai";
-import { FiLoader  } from "react-icons/fi"
+import { FiLoader  , FiLock  } from "react-icons/fi"
 type ProjectCardProps = {
   title: string;
   description: string;
@@ -155,7 +155,7 @@ const handlePasswordSubmit = async () => {
   <div className="flex flex-col justify-between gap-5 h-full w-full p-8 md:p-14 font-jakarta relative">
     <div className="space-y-4 sm:space-y-4">
       <h3 className="font-bold flex items-center gap-2 text-[17px] md:text-[20px]">
-        {title} {locked && <span className="text-gray-500 text-lg">🔒</span>}
+        {title} 
       </h3>
 
       <p className="text-[14px] md:text-[15px] text-gray-800 leading-relaxed">
@@ -176,26 +176,27 @@ const handlePasswordSubmit = async () => {
     </div>
 
     {/* Button */}
-    <div className="mt-6">
-      <Button
-  onClick={() => handleOpenCaseStudy(slug)}
-  variant="textOnly"
-  className="group flex items-center px-1 gap-2 !text-black w-max md:w-auto"
->
-  <span className="relative text-[13px] md:text-[16px] overflow-hidden">
-    Read Case Study
-    {/* Animated underline */}
-    <span
-      className="absolute bottom-0 left-0 w-0 h-[1px]  bg-black transition-all duration-500 ease-out group-hover:w-full"
-    />
-  </span>
-  <FiArrowRight
-    size={20}
-    className="transition-transform duration-300  group-hover:translate-x-1"
-  />
-</Button>
+<div className="flex items-center gap-2">
+{locked && <FiLock size={20}/> }
+ <Button
+    onClick={() => handleOpenCaseStudy(slug)}
+    variant="textOnly"
+    className="group flex items-center justify-center mt-1 gap-2 px-1 !text-black"
+  >
+    <span className="relative text-[13px] md:text-[16px] leading-none">
+      Read Case Study
+      {/* Animated underline */}
+      <span
+        className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-500 ease-out group-hover:w-full"
+      />
+    </span>
 
-    </div>
+    <FiArrowRight
+      size={20}
+      className="transition-transform duration-300 group-hover:translate-x-1"
+    />
+  </Button>
+  </div>
   </div>
 
   {/* Right Image */}
