@@ -80,13 +80,13 @@ const tagsRow2: { icon: IconType; text: string }[] = [
 function TagItem({ icon: Icon, text }: { icon: IconType; text: string }) {
   return (
     <div
-      className="flex items-center gap-3 px-5 md:px-8 md:py-3 py-2 font-medium font-jakarta whitespace-nowrap
+      className="flex items-center gap-3 px-2 md:px-8 md:py-3 py-2 font-medium font-jakarta whitespace-nowrap
                  hover:scale-105 transition-transform duration-300
                  cursor-default select-none
                  bg-gradient-to-r from-gray-50 to-gray-100 text-black rounded-full"
     >
       <Icon className="text-purple-400" />
-      <span className="font-jakarta text-[15px]">{text}</span>
+      <span className="font-jakarta md:text-[15px] text-[10px]">{text}</span>
     </div>
   );
 }
@@ -97,7 +97,7 @@ export default function TagsStrip() {
   const scrollingTagsRow2 = [...tagsRow2, ...tagsRow2];
 
   return (
-    <SectionWrapper className="py-20">
+    <SectionWrapper className="py-10">
       <section className="relative w-full overflow-hidden">
         {/* gradient fade edges */}
         <div className="pointer-events-none absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-20" />

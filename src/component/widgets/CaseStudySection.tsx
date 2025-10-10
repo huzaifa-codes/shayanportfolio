@@ -18,7 +18,7 @@ const CaseStudySection: React.FC = () => {
   const caseStudy = caseStudies.slice(0, 4);
 
   return (
- <SectionWrapper className="py-20">
+ <SectionWrapper className="py-10 md:py-15">
      <section className="relative  w-full h-full">
      {/* <GradientBackground/> */}
       <div className="relative z-10  space-y-10">

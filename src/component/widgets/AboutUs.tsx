@@ -31,7 +31,7 @@ const AboutSection: React.FC = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-     <SectionWrapper className="py-20">
+     <SectionWrapper className="py-10 md:py-15">
     <section id="about">
      
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
@@ -51,10 +51,10 @@ const AboutSection: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="space-y-4"
             >
-              <p className="text-base  leading-relaxed">
+              <p className="text-lg text-gray-700 leading-relaxed">
                 i&apos;m Shayan, a Product Designer who loves creating clean, meaningful, and user-friendly experiences. I started my journey five years ago as a freelance graphic designer, exploring visuals and creativity in every form. Soon after, I discovered UI/UX design, and it just felt right. Since then, Ive focused on combining visuals with purpose, designing interfaces that not only look good but feel easy to use.
               </p>
-              <p className="text-base  leading-relaxed">
+              <p className="text-lg text-gray-700  leading-relaxed">
                 With 3+ years of experience in UX design, I specialize in creating intuitive, high-impact digital products that truly make a difference.
               </p>
             </motion.div>
@@ -80,9 +80,9 @@ const AboutSection: React.FC = () => {
                             key={i}
                             className="grid grid-cols-3 gap-[30px] md:gap-[170px]  border-b border-gray-200 py-2"
                           >
-                            <h4 className="md:w-[160px] text-[12px] md:text-[14px]">{item.title}</h4>
-                            <span className="md:w-[160px] text-[12px] md:text-[14px]">{item.company}</span>
-                             <span className="text-[12px]">{item.period}</span>
+                            <h4 className="md:w-[160px] text-[12px] md:text-[15px]">{item.title}</h4>
+                            <span className="md:w-[160px] text-[12px] md:text-[15px]">{item.company}</span>
+                             <span className="text-[15px]">{item.period}</span>
                           </div>
                         ))}
                       </div>

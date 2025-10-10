@@ -7,7 +7,7 @@ import { useConContext } from "@/context/useConContext";
 export default function ContactConsultancySection() {
    const { setContect } = useConContext();
   return (
-    <SectionWrapper className="py-14">
+    <SectionWrapper className="py-10">
       <section
         className="bg-gray-50 rounded-[40px] px-3 lg:rounded-[20px]  py-12 md:px-12 md:py-16 lg:px-20 lg:py-20
                    flex flex-col items-center text-center space-y-4 font-jakarta"

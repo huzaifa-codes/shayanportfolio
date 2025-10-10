@@ -167,7 +167,7 @@ const handlePasswordSubmit = async () => {
         {services?.map((item, i) => (
           <span
             key={i}
-            className="min-w-[87px] h-[30px]  flex items-center justify-center bg-white/40 rounded-full text-[10px]  text-gray-900 tracking-wide transition-all duration-300 hover:bg-white/60"
+            className="min-w-[90px] h-[30px]  px-3 flex items-center justify-center bg-white/50 rounded-full text-[10px]  text-black tracking-wide transition-all duration-300 hover:bg-white/60"
           >
             {item}
           </span>

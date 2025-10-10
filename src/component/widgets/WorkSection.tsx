@@ -45,7 +45,7 @@ export default function WorkSection() {
   const animationDuration = 18;
 
   return (
-   <SectionWrapper className="py-20">
+   <SectionWrapper className="py-10 md:py-15">
      <section className="relative  rounded-2xl  ">
 
       <h2 className="text-center  mb-8">Glimpse into what I design</h2>
