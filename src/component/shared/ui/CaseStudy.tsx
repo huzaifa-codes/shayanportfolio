@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import React, { useRef, useEffect, useState } from "react";
 import Button from "./Button";
 import { motion, useAnimation } from "framer-motion";
@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import { FiArrowRight } from "react-icons/fi";
 import { AiOutlineLock, AiOutlineClose } from "react-icons/ai";
 import { FiLoader  , FiLock  } from "react-icons/fi"
-import { useSearchParams } from "next/navigation";
 type ProjectCardProps = {
   title: string;
   description: string;
@@ -69,20 +68,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   // Handle view project click
 
+const [isCheckingSlug, setIsCheckingSlug] = useState(true);
 
-  const searchParams = useSearchParams();
-const lockedSlugFromUrl = searchParams?.get("lockedSlug");
-
-// 👇 Open modal automatically if URL has ?lockedSlug=slug
 useEffect(() => {
-  if (locked && slug && lockedSlugFromUrl === slug) {
-    setShowModal(true);
-    setStep("password");
-    setPassword("");
-    setEmail("");
-    setMessage(null);
+  if (typeof window !== "undefined") {
+    const params = new URLSearchParams(window.location.search);
+    const lockedSlugFromUrl = params.get("lockedSlug");
+
+    if (locked && slug && lockedSlugFromUrl === slug) {
+      setShowModal(true);
+      setStep("password");
+      setPassword("");
+      setEmail("");
+      setMessage(null);
+    }
+
+    // ✅ Check complete
+    setIsCheckingSlug(false);
   }
-}, [lockedSlugFromUrl, slug, locked]);
+}, [locked, slug]);
 
 
   const handleOpenCaseStudy = (slug?: string) => {
@@ -163,6 +167,15 @@ const handlePasswordSubmit = async () => {
       setLoading(false);
     }
   };
+
+  if (isCheckingSlug) {
+  return (
+    <div className="flex justify-center items-center py-10 text-gray-600 text-sm">
+      <FiLoader className="animate-spin mr-2" size={20} />
+      Checking access...
+    </div>
+  );
+}
 
   return (
     <section>
