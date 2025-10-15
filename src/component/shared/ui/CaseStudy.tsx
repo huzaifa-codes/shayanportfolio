@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { FiArrowRight } from "react-icons/fi";
 import { AiOutlineLock, AiOutlineClose } from "react-icons/ai";
 import { FiLoader  , FiLock  } from "react-icons/fi"
+import { useSearchParams } from "next/navigation";
 type ProjectCardProps = {
   title: string;
   description: string;
@@ -40,6 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     { threshold: 0.5 }
   );
 
+  
   const currentRef = ref.current;
   if (currentRef) observer.observe(currentRef);
 
@@ -56,6 +58,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     });
   }, [isVisible, controls]);
 
+
   // Modal & form states
   const [showModal, setShowModal] = useState(false);
   const [step, setStep] = useState<"password" | "email">("password");
@@ -65,6 +68,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const [loading, setLoading] = useState(false);
 
   // Handle view project click
+
+
+  const searchParams = useSearchParams();
+const lockedSlugFromUrl = searchParams?.get("lockedSlug");
+
+// 👇 Open modal automatically if URL has ?lockedSlug=slug
+useEffect(() => {
+  if (locked && slug && lockedSlugFromUrl === slug) {
+    setShowModal(true);
+    setStep("password");
+    setPassword("");
+    setEmail("");
+    setMessage(null);
+  }
+}, [lockedSlugFromUrl, slug, locked]);
+
+
   const handleOpenCaseStudy = (slug?: string) => {
     if (locked) {
       setShowModal(true);
@@ -88,7 +108,7 @@ const handlePasswordSubmit = async () => {
     const res = await fetch("/api/password-verify", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password }),
+      body: JSON.stringify({ password  , slug}),
     });
     const data = await res.json();
 
@@ -300,7 +320,11 @@ const handlePasswordSubmit = async () => {
 
       {/* Close Button */}
       <button
-        onClick={() => setShowModal(false)}
+         onClick={() => {
+    setShowModal(false);
+    router.replace("/", undefined); // ✅ this removes ?lockedSlug
+  }}
+
         className="absolute top-5 right-10 text-gray-400 hover:text-black text-[40px]"
       >
         <AiOutlineClose />

@@ -13,7 +13,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'shayandesigns',
+  title: 'Shayandesigns UI UX Designer',
   description: 'This is me Shayan Designs',
   icons: {
     icon: '/images/shayan-logo.svg',  
